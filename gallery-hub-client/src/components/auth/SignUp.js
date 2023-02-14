@@ -21,11 +21,7 @@ const SignUp = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-<<<<<<< HEAD
-    const [isCurator, setIsCurator] = useState(false)
-=======
     const [curatorFlag, setCuratorFlag] = useState(false)
->>>>>>> fd4e583 (fixed login api)
 
     const navigate = useNavigate()
 
@@ -34,22 +30,6 @@ const SignUp = props => {
 
         const { msgAlert, setUser } = props
 
-<<<<<<< HEAD
-        const credentials = {email, password, passwordConfirmation, isCurator}
-
-		signUp(credentials)
-			.then(() => signIn(credentials))
-			.then((res) => setUser(res.data.user))
-			.then(() =>
-				msgAlert({
-					heading: 'Sign Up Success',
-					message: messages.signUpSuccess,
-					variant: 'success',
-				})
-			)
-			.then(() => navigate('/'))
-			.catch((error) => {
-=======
         const credentials = {
             email,
             password,
@@ -69,7 +49,6 @@ const SignUp = props => {
             )
             .then(() => navigate('/'))
             .catch(error => {
->>>>>>> fd4e583 (fixed login api)
                 setEmail('')
                 setPassword('')
                 setPasswordConfirmation('')
