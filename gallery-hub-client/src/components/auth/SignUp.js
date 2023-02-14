@@ -8,28 +8,33 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const SignUp = (props) => {
-	// constructor(props) {
-	// 	super(props)
+const SignUp = props => {
+    // constructor(props) {
+    // 	super(props)
 
-	// 	this.state = {
-	// 		email: '',
-	// 		password: '',
-	// 		passwordConfirmation: '',
-	// 	}
-	// }    
+    // 	this.state = {
+    // 		email: '',
+    // 		password: '',
+    // 		passwordConfirmation: '',
+    // 	}
+    // }
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
+<<<<<<< HEAD
     const [isCurator, setIsCurator] = useState(false)
+=======
+    const [curatorFlag, setCuratorFlag] = useState(false)
+>>>>>>> fd4e583 (fixed login api)
 
     const navigate = useNavigate()
 
-	const onSignUp = (event) => {
-		event.preventDefault()
+    const onSignUp = event => {
+        event.preventDefault()
 
-		const { msgAlert, setUser } = props
+        const { msgAlert, setUser } = props
 
+<<<<<<< HEAD
         const credentials = {email, password, passwordConfirmation, isCurator}
 
 		signUp(credentials)
@@ -44,17 +49,38 @@ const SignUp = (props) => {
 			)
 			.then(() => navigate('/'))
 			.catch((error) => {
+=======
+        const credentials = {
+            email,
+            password,
+            passwordConfirmation,
+            curatorFlag,
+        }
+        console.log('deez creds: ', JSON.stringify(credentials))
+        signUp(credentials)
+            .then(() => signIn(credentials))
+            .then(res => setUser(res.data.user))
+            .then(() =>
+                msgAlert({
+                    heading: 'Sign Up Success',
+                    message: messages.signUpSuccess,
+                    variant: 'success',
+                })
+            )
+            .then(() => navigate('/'))
+            .catch(error => {
+>>>>>>> fd4e583 (fixed login api)
                 setEmail('')
                 setPassword('')
                 setPasswordConfirmation('')
-				msgAlert({
-					heading: 'Sign Up Failed with error: ' + error.message,
-					message: messages.signUpFailure,
-					variant: 'danger',
-				})
-			})
-	}
-
+                setCuratorFlag(false)
+                msgAlert({
+                    heading: 'Sign Up Failed with error: ' + error.message,
+                    message: messages.signUpFailure,
+                    variant: 'danger',
+                })
+            })
+    }
 
     return (
         <div className='row'>
@@ -91,27 +117,29 @@ const SignUp = (props) => {
                             value={passwordConfirmation}
                             type='password'
                             placeholder='Confirm Password'
-                            onChange={e => setPasswordConfirmation(e.target.value)}
+                            onChange={e =>
+                                setPasswordConfirmation(e.target.value)
+                            }
                         />
                     </Form.Group>
-
-                    <Form.Group className="m-2">
-                    <Form.Check 
-                        label="Is this a curator?"
-                        name="isCurator"
-                        // defaultChecked={gallery.curators }
-                        onChange={() => setIsCurator (prev => !prev)}
+                    <Form.Group className='m-2'>
+                        <Form.Check
+                            label='Is this a curator?'
+                            name='isCurator'
+                            // defaultChecked={ gallery.curators }
+                            onChange={() => setCuratorFlag(prev => !prev)}
                         />
                     </Form.Group>
-
-                    <Button variant='primary' type='submit'>
+                    <Button
+                        variant='primary'
+                        type='submit'
+                    >
                         Submit
                     </Button>
                 </Form>
             </div>
         </div>
     )
-
 }
 
 export default SignUp
