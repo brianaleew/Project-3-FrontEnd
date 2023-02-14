@@ -17,3 +17,14 @@
 This color gradient is my inspo for the color scheme of the site. Just holding it here just in case i want it later!
 backgroundColor: 'rgb(180,196,250)',
 background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */
+
+
+/* NavBar */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
