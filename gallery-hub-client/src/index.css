@@ -1,10 +1,13 @@
-:root {
-    --clr-primary: hsl(216 46% 69%);
-    --clr-secondary: hsl(263 46% 75%);
-    --clr-gray-100: hsl(0 0% 100%);
-    --clr-gray-90: hsl(0 0% 90%);
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-    color: var(--clr-primary);
-}
+/* 
+This color gradient is my inspo for the color scheme of the site. Just holding it here just in case i want it later!
+backgroundColor: 'rgb(180,196,250)',
+background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */

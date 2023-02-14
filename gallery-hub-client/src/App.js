@@ -12,6 +12,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import ShowGallery from './components/galleries/ShowGallery'
+import CreateGallery from './components/galleries/CreateGallery'
 
 const App = () => {
 
@@ -68,6 +70,19 @@ const App = () => {
                 <ChangePassword msgAlert={msgAlert} user={user} />
               </RequireAuth>}
           />
+
+          <Route
+					path='/create-gallery'
+					element={
+					<RequireAuth user={user}>
+						<CreateGallery msgAlert={msgAlert} user={user} />
+					</RequireAuth>}
+				/>
+				<Route 
+					path='galleries/:id'
+					element={ <ShowGallery user={user} msgAlert={msgAlert} />}
+				/>
+
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
 					<AutoDismissAlert
