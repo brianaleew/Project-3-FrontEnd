@@ -1,0 +1,9 @@
+/* NavBar */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}

@@ -52,7 +52,7 @@ const Header = ({ user }) => (
                 galleryhub
             </Link>
         </Navbar.Brand>
-		<Navbar.Toggle aria-controls='basic-navbar-nav' className='text-dark' />
+		<Navbar.Toggle aria-controls='basic-navbar-nav' className='m-2' />
 		<Navbar.Collapse id='basic-navbar-nav' style={dropdownNav}className='m-2 nav justify-content-end bg-muted' >
 			<Nav className='ml-auto'>
 				{user && (
