@@ -1,7 +1,9 @@
+//The EditArtistModal is rendered in the ArtistIndex
+
 import React, { useState } from 'react' 
 import { Modal } from 'react-bootstrap'
 import ArtistForm from '../shared/ArtistForm'
-import messages from '../shared/AutoDismissAlert/messages'
+import messages, { updateArtistFailure, updateArtistSuccess } from '../shared/AutoDismissAlert/messages'
 
 const EditArtistModal = (props) => {
     //all the props we need 
@@ -31,6 +33,42 @@ const EditArtistModal = (props) => {
         e.preventDefault()
 
         updateArtist(user, artist)
-            
+            .then(() => handleClose())
+            .then(() => {
+                msgAlert({
+                    heading: 'Nice Edit!',
+                    message: updateArtistSuccess,
+                    variant: 'success'
+                })
+            })
+            .then(() => triggerRefresh())
+            .catch(() => {
+                msgAlert({
+                    heading: 'Oops!',
+                    message: updateArtistFailure,
+                    variant: 'danger'
+                })
+            })
     }
+
+    return (
+        <>
+        <Modal show={show} onHide={handleClose}>
+
+            <Modal.Body>
+                <ArtistForm
+                    artist={artist}
+                    handleChange={onChange} 
+                    handleSubmit={onSubmit}
+                    heading="Update The Artist"
+                />
+            </Modal.Body>
+        </Modal>
+        
+        
+        
+        </>
+    )
 }
+
+export default EditArtistModal
