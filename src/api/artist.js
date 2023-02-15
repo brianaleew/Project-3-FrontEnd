@@ -14,7 +14,7 @@ export const getOneArtist = () => {
 }
 
 //CREATE
-export const = createArtist = (user, newArtist) => {
+export const createArtist = (user, newArtist) => {
     return axios({
         url: `${apiUrl}/artists`,
         method: 'POST',
