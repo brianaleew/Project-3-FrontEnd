@@ -40,6 +40,7 @@ const GalleryIndex = props => {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div>
 <<<<<<< HEAD
         <img src =" "></img>
@@ -84,6 +85,17 @@ const GalleryIndex = props => {
                 <p>recommended galleries</p>
                 <ul className='gh-grid-400'>{galleryArray}</ul>
 >>>>>>> bf30351 (landing page style part 1)
+=======
+        <div>
+            <img
+                src='Images/art-gallery.jpg'
+                alt='hero'
+            ></img>
+            <div>
+                <h1>Recommended Galleries</h1>
+
+                <ul>{galleryArray}</ul>
+>>>>>>> ea1d367 (ll)
             </div>
         </div>
     )
