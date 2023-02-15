@@ -103,6 +103,7 @@ const SignUp = props => {
                             }
                         />
                     </Form.Group>
+
                     <Form.Group className='m-2'>
                         <Form.Check
                             label='Is this a curator?'
@@ -115,7 +116,9 @@ const SignUp = props => {
                         variant='primary'
                         type='submit'
                     >
+
                         Submit
+
                     </Button>
                 </Form>
             </div>
