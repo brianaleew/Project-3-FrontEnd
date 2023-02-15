@@ -71,6 +71,7 @@ const CreateArtist = (props) => {
             heading='Add A New Artist'
         />
     )
+  }
 }
 
-export default CreateArtist
+export default CreateArtist 
