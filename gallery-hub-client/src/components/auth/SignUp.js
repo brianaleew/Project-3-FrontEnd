@@ -36,7 +36,9 @@ const SignUp = props => {
             passwordConfirmation,
             curatorFlag,
         }
+
         console.log('deez creds: ', JSON.stringify(credentials))
+
         signUp(credentials)
             .then(() => signIn(credentials))
             .then(res => setUser(res.data.user))
