@@ -6,6 +6,15 @@ const messages = {
 	signOutSuccess: 'Come back soon!',
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
+	createArtistSuccess: 'You have successfully added an Artist!',
+	createArtistFailure: 'Oops! Failed to create an Artist. Please Try Again',
+	updateArtistSuccess: 'You have successfully updated the Artist',
+	updateArtistFailure: 'You have successfully updated the Artist',
+	getArtistsSuccess: 'You have successfully retrieved the artists',
+	getArtistsFailure: 'There was a problem getting the Artist(s). Try Again',
+
+
+
 }
 
 module.exports = messages
