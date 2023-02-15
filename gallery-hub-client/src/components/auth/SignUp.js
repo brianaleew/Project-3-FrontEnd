@@ -117,6 +117,8 @@ const SignUp = props => {
                         type='submit'
                     >
 
+                        Submit
+
                     </Button>
                 </Form>
             </div>

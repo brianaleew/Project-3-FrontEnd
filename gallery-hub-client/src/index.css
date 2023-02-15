@@ -1,4 +1,5 @@
 
+
 /* importing three tester fonts: Montserrat, Exo and Oswald */
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Montserrat:ital@0;1&family=Oswald&display=swap');
 
@@ -18,16 +19,6 @@
 This color gradient is my inspo for the color scheme of the site. Just holding it here just in case i want it later!
 backgroundColor: 'rgb(180,196,250)',
 background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */
-:root {
-    --clr-primary: hsl(216 46% 69%);
-    --clr-secondary: hsl(263 46% 75%);
-    --clr-gray-100: hsl(0 0% 100%);
-    --clr-gray-90: hsl(0 0% 90%);
-}
-
-h1 {
-    color: var(--clr-primary);
-}
 
 
 
@@ -40,4 +31,3 @@ h1 {
     border: none !important;
     box-shadow: none !important;
 }
-
