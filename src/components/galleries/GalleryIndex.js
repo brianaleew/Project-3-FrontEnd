@@ -79,12 +79,15 @@ const GalleryIndex = props => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 =======
 >>>>>>> 5c47a7c (landing page style part 1)
 =======
 >>>>>>> 23e419c (moar landing page styling and sign in page styling)
+=======
+>>>>>>> bde1393 (ll)
         <div className='main'>
             <div className='gallery-index__hero'>
                 <img
@@ -130,6 +133,8 @@ const GalleryIndex = props => {
 =======
 =======
 >>>>>>> a7557ab (moar landing page styling and sign in page styling)
+=======
+>>>>>>> aa1735c (ll)
         <div>
 <<<<<<< HEAD
         <img src =" "></img>
@@ -174,7 +179,21 @@ const GalleryIndex = props => {
                 <p>recommended galleries</p>
                 <ul className='gh-grid-400'>{galleryArray}</ul>
 >>>>>>> bf30351 (landing page style part 1)
+<<<<<<< HEAD
 >>>>>>> c6bc717 (landing page style part 1)
+=======
+=======
+        <div>
+            <img
+                src='Images/art-gallery.jpg'
+                alt='hero'
+            ></img>
+            <div>
+                <h1>Recommended Galleries</h1>
+
+                <ul>{galleryArray}</ul>
+>>>>>>> ea1d367 (ll)
+>>>>>>> aa1735c (ll)
             </div>
         </div>
     )
