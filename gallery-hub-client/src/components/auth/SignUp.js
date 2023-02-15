@@ -21,7 +21,11 @@ const SignUp = props => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
+<<<<<<< HEAD
     const [curatorFlag, setCuratorFlag] = useState(false)
+=======
+    const [isCurator, setIsCurator] = useState(false)
+>>>>>>> db40aef (Show Gallery file added)
 
     const navigate = useNavigate()
 
@@ -30,12 +34,16 @@ const SignUp = props => {
 
         const { msgAlert, setUser } = props
 
+<<<<<<< HEAD
         const credentials = {
             email,
             password,
             passwordConfirmation,
             curatorFlag,
         }
+=======
+        const credentials = {email, password, passwordConfirmation, isCurator}
+>>>>>>> db40aef (Show Gallery file added)
 
         console.log('deez creds: ', JSON.stringify(credentials))
 
@@ -103,6 +111,7 @@ const SignUp = props => {
                             }
                         />
                     </Form.Group>
+<<<<<<< HEAD
                     <Form.Group className='m-2'>
                         <Form.Check
                             label='Is this a curator?'
@@ -115,6 +124,19 @@ const SignUp = props => {
                         variant='primary'
                         type='submit'
                     >
+=======
+
+                    <Form.Group className="m-2">
+                    <Form.Check 
+                        label="Is this a curator?"
+                        name="isCurator"
+                        // defaultChecked={gallery.curators }
+                        onChange={() => setIsCurator (prev => !prev)}
+                        />
+                    </Form.Group>
+
+                    <Button variant='primary' type='submit'>
+>>>>>>> db40aef (Show Gallery file added)
                         Submit
                     </Button>
                 </Form>
