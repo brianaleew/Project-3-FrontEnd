@@ -21,6 +21,7 @@ const SignUp = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [isCurator, setIsCurator] = useState(false)
 
     const navigate = useNavigate()
 
@@ -29,7 +30,7 @@ const SignUp = (props) => {
 
 		const { msgAlert, setUser } = props
 
-        const credentials = {email, password, passwordConfirmation}
+        const credentials = {email, password, passwordConfirmation, isCurator}
 
 		signUp(credentials)
 			.then(() => signIn(credentials))
@@ -93,6 +94,16 @@ const SignUp = (props) => {
                             onChange={e => setPasswordConfirmation(e.target.value)}
                         />
                     </Form.Group>
+
+                    <Form.Group className="m-2">
+                    <Form.Check 
+                        label="Is this a curator?"
+                        name="isCurator"
+                        // defaultChecked={gallery.curators }
+                        onChange={() => setIsCurator (prev => !prev)}
+                        />
+                    </Form.Group>
+
                     <Button variant='primary' type='submit'>
                         Submit
                     </Button>
