@@ -1,0 +1,33 @@
+
+
+/* importing three tester fonts: Montserrat, Exo and Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital@1&family=Montserrat:ital@0;1&family=Oswald&display=swap');
+
+
+/* creating variables for tester colors */
+:root {
+  --color-primary: hsl(226°, 4%, 12%); /* a dark gray color */
+  --color-secondary: rgba(232,234,242,1); /* a light gray color */
+  --color-accent-b: rgba(180,196,250,1); /* a pale blue color */
+  --color-accent-bd: rgba(117,143,246,1); /* a darker blue color */
+  --color-accent-r: rgba(246,117,117,1); /* a red variation color */
+  --color-accent-g: rgba(134,246,117,1); /* a green variation color */
+}
+
+
+/* 
+This color gradient is my inspo for the color scheme of the site. Just holding it here just in case i want it later!
+backgroundColor: 'rgb(180,196,250)',
+background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */
+
+
+
+/* NavBar */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
