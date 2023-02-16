@@ -3,14 +3,14 @@
 import React, { useState } from 'react' 
 import { Modal } from 'react-bootstrap'
 import ArtistForm from '../shared/ArtistForm'
-import messages, { updateArtistFailure, updateArtistSuccess } from '../shared/AutoDismissAlert/messages'
+import { updateArtistFailure, updateArtistSuccess } from '../shared/AutoDismissAlert/messages'
 
 const EditArtistModal = (props) => {
     //all the props we need 
     const { user, show, handleClose, updateArtist, msgAlert, triggerRefresh } = props 
     
     const [artist, setArtist] = useState(props.artist)
-
+    //linking names and values to what is input by users in form
     const onChange = (e) => {
         e.persist()
 
@@ -33,7 +33,9 @@ const EditArtistModal = (props) => {
         e.preventDefault()
 
         updateArtist(user, artist)
-            .then(() => handleClose())
+            //closing modal
+            .then(() => handleClose()) 
+            //sending user the success message
             .then(() => {
                 msgAlert({
                     heading: 'Nice Edit!',
@@ -41,7 +43,9 @@ const EditArtistModal = (props) => {
                     variant: 'success'
                 })
             })
+            //refreshing 
             .then(() => triggerRefresh())
+            //handling error with message to user
             .catch(() => {
                 msgAlert({
                     heading: 'Oops!',

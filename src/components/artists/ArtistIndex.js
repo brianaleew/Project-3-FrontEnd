@@ -28,10 +28,15 @@ const ArtistIndex = (props) => {
                     message: getArtistsFailure,
                     variant: 'danger'
                 })
-                
+               setError(true) 
             })
 
     }, [updated])
+
+    //if there is an error, display the error
+    if (error) {
+        return <p>Error Ocurred!</p>
+    }
 
     //the function for deleting artists from the index
     const removeArtist = () => {
@@ -45,7 +50,7 @@ const ArtistIndex = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => )
+            .then(() => triggerRefresh())
             .catch(() => {
                 msgAlert({
                     heading: 'Deletion Success',
@@ -103,7 +108,7 @@ const ArtistIndex = (props) => {
         <CreateArtistModal
             user={user}
             artist={artist}
-            show={createArtistModalShow}
+            show={createArtistModalShow(false)}
             createArtist={createArtist}
             msgAlert={msgAlert}
             
@@ -114,9 +119,11 @@ const ArtistIndex = (props) => {
         <EditArtistModal
             user={user}
             artist={artist}
+            show={editArtistModalShow}
             handleClose={() => seteditArtistModalShow(false)}
-            show={createArtistModalShow}
-            createArtist={createArtist}
+            triggerRefresh={() => }
+            updateArtist={updateArtist}
+            editArtist={editArtist}
             msgAlert={msgAlert}
         />
 
