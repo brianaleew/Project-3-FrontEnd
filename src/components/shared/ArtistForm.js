@@ -42,22 +42,22 @@ const ArtistForm = (props) => {
                         />    
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Location</Form.Label>
-                    <Form.Control
-                        placeholder="Where is the Artist located or from (if deceased)?"
-                        name="location"
-                        id="location"
-                        value={artist.location}
-                        onChange={handleChange}
-                        />    
-                </Form.Group>
-                <Form.Group>
                     <Form.Label>Website</Form.Label>
                     <Form.Control
                         placeholder="Place a link to the Artist's portfolio here"
                         name="website"
                         id="website"
                         value={artist.website}
+                        onChange={handleChange}
+                        />    
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label>Artist Image</Form.Label>
+                    <Form.Control
+                        placeholder="Place the image link to your artist picture here"
+                        name="img"
+                        id="img"
+                        value={artist.img}
                         onChange={handleChange}
                         />    
                 </Form.Group>
