@@ -1,5 +1,5 @@
-.footer > p {
+.footer {
     width: fit-content;
-    margin-block: 5.5rem;
+    padding-block: 5.5rem;
     margin-inline: auto;
 }

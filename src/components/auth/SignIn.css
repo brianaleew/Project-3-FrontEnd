@@ -1,0 +1,5 @@
+.sign-in__container {
+    margin-block: 5rem;
+    margin-inline: auto;
+    width: min(480px, 88%);
+}
