@@ -16,6 +16,8 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowGallery from './components/galleries/ShowGallery'
 import CreateGallery from './components/galleries/CreateGallery'
 import ArtistIndex from './components/artists/ArtistIndex'
+import EditGalleryModal from './components/galleries/EditGalleryModal'
+
 
 
 const App = () => {
