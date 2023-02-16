@@ -9,7 +9,7 @@ import { Modal } from 'react-bootstrap'
 
 const CreateArtistModal = (props) => {
     //getting props we need
-    const { user, show, handleClose, createArtist, msgAlert, triggerRefresh } = props 
+    const { user, show, handleClose, createArtist, msgAlert } = props 
 
     //pulling the navigation func 
     const navigate = useNavigate()
