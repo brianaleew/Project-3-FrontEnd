@@ -54,7 +54,9 @@ p {
 This color gradient is my inspo for the color scheme of the site. Just holding it here just in case i want it later!
 backgroundColor: 'rgb(180,196,250)',
 background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */
+
 /* GENERAL CLASSES */
+
 #root {
     min-height: 100vh;
     display: flex;
