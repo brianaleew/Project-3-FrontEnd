@@ -12,6 +12,8 @@ const messages = {
 	updateArtistFailure: 'You have successfully updated the Artist',
 	getArtistsSuccess: 'You have successfully retrieved the artists',
 	getArtistsFailure: 'There was a problem getting the Artist(s). Try Again',
+	deleteArtistSuccess: 'You have successfully deleted the Artist',
+	deleteArtistFailure: 'Failed to delete Artist, please try again.'
 
 
 
