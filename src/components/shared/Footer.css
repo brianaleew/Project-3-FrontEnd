@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5c47a7c (landing page style part 1)
 .footer {
     width: fit-content;
     padding-block: 5.5rem;
@@ -7,11 +10,15 @@
 .footer > p {
     width: fit-content;
     margin-block: 5.5rem;
+<<<<<<< HEAD
 >>>>>>> bf30351 (landing page style part 1)
 =======
 .footer {
     width: fit-content;
     padding-block: 5.5rem;
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> c6bc717 (landing page style part 1)
+>>>>>>> 5c47a7c (landing page style part 1)
     margin-inline: auto;
 }
