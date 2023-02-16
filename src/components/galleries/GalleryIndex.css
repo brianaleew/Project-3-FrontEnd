@@ -1,0 +1,13 @@
+.gallery-index__hero-image {
+    max-width: 100%;
+}
+
+.gallery-index__main-container {
+    width: min(640px, 97%);
+    margin-inline: auto;
+}
+
+.gallery-index__gallery-image {
+    max-width: 100%;
+    object-fit: scale-down;
+}
