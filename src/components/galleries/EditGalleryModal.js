@@ -1,6 +1,3 @@
-// this modal is rendered by ShowPet
-// The state that controls whether this is open or not live in ShowPet
-// the state and the updaterfunction associated with that state is passed here as a prop.
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import GalleryForm from '../shared/GalleryForm'
@@ -10,12 +7,12 @@ const EditGallery = (props) => {
 
     const { user, show, handleClose, updateGallery, msgAlert, triggerRefresh } = props
 
-    const [gallery, setGalley] = useState(props.gallery)
+    const [gallery, setGallery] = useState(props.gallery)
 
     const onChange = (e) => {
         e.persist()
         
-        setGalley(prevGallery => {
+        setGallery(prevGallery => {
             const updatedName = e.target.name
             let updatedValue = e.target.value
 
@@ -23,11 +20,11 @@ const EditGallery = (props) => {
                 updatedValue = parseInt(e.target.value)
             }
 
-            if (updatedName === 'curator' && e.target.checked) {
-                updatedValue = true
-            } else if (updatedName === 'cutrator' && !e.target.checked) {
-                updatedValue = false
-            }
+            // if (updatedName === 'curator' && e.target.checked) {
+            //     updatedValue = true
+            // } else if (updatedName === 'cutrator' && !e.target.checked) {
+            //     updatedValue = false
+            // }
             
             const updatedGallery = {
                 [updatedName] : updatedValue
@@ -47,10 +44,10 @@ const EditGallery = (props) => {
         updateGallery(user, gallery)
           
             .then(() => handleClose())
-          
+            
             .then(() => {
                 msgAlert({
-                    heading: 'Oh Yeah!',
+                    heading: 'Gallery is Edited!',
                     message: messages.updateGallerySuccess,
                     variant: 'success'
                 })
@@ -58,7 +55,7 @@ const EditGallery = (props) => {
             
 
             .then(() => triggerRefresh())
-            // if there is an error, tell the user about it
+       
             .catch(() => {
                 msgAlert({
                     heading: 'Oh No!',

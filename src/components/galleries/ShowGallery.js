@@ -5,7 +5,7 @@ import { Container, Card, Button } from 'react-bootstrap'
 import { getOneGallery, removeGallery, updateGallery } from '../../api/gallery'
 import messages from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
-// import EditGalleryModal from './EditGalleryModal'
+import EditGalleryModal from './EditGalleryModal'
 // import ShowArtwork from '../artwork/ArtworkIndex'
 // import NewArtworkModal from '../artworks/NewArtworkModal'
 
@@ -124,6 +124,19 @@ const ShowGallery = props => {
                 </p>
             </div>
             {conditionalInterface}
+            
+            <EditGalleryModal
+
+                user = {user}
+                show = {editModalShow}
+                handleClose = {()=> setEditModalShow(false)}
+                updateGallery = {updateGallery}
+                msgAlert = {msgAlert}
+                triggerRefresh = {()=> setUpdated(prev => !prev)}
+                gallery = {gallery}
+
+            />
+            {/* we have to add our Edit Gallery modal here but I don't know where I should exactly add it */}
         </div>
     )
 }

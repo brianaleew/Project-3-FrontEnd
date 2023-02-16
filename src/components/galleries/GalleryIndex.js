@@ -39,23 +39,6 @@ const GalleryIndex = props => {
     console.log(galleryArray)
 
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div>
-<<<<<<< HEAD
-        <img src =" "></img>
-        <div>
-
-            <h1>Recommended Galleries</h1>
-
-                <ul>{galleryArray}</ul>
-=======
-            <img
-                className='gallery-index__hero-image'
-                src={'/art-gallery.jpg'}
-                alt='hero'
-            />
-=======
         <div className='main'>
             <div className='gallery-index__hero'>
                 <img
@@ -80,20 +63,9 @@ const GalleryIndex = props => {
                     </div>
                 </div>
             </div>
->>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
             <div className='gh-main-container'>
                 <p>recommended galleries</p>
                 <ul className='gh-grid-400'>{galleryArray}</ul>
->>>>>>> bf30351 (landing page style part 1)
-=======
-        <div>
-        <img src =" "></img>
-        <div>
-
-            <h1>Recommended Galleries</h1>
-
-                <ul>{galleryArray}</ul>
->>>>>>> ea1d367 (ll)
             </div>
         </div>
     )

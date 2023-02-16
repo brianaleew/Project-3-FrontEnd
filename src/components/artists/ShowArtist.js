@@ -25,7 +25,7 @@ const ShowArtist = (props) => {
     return(
         <>
         <div>
-            <img src={artist.img}  alt='A picture of the artist' >
+            <img src={artist.img}  alt='A picture of the artist' />
         </div>
 
         <div>
