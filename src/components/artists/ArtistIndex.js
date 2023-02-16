@@ -13,6 +13,7 @@ const ArtistIndex = (props) => {
 
     const { msgAlert, user, triggerRefresh } = props
 
+    const [artistInfo, setArtistInfo] = useState({})
     const [artistArray, setArtistArray] = useState([])
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
@@ -64,12 +65,27 @@ const ArtistIndex = (props) => {
     //             })
     //         })
     // }
+    const editIconClick = (info) => {
+        // e.preventDefault()
+        // console.log('this is info', info)
+        setArtistInfo(() => info)
+        console.log('This is artist info', artistInfo)
+        setEditArtistModalShow(true)
+    }
+
+
+
+
     //Once api call gets artists, iterate through each one and render this style
     const artistDisplays = artistArray.map(person => {
+            // setArtistInfo()
             return (
                 // not final
                 <div>
                     <img src={person.img} alt='picture of the artist' />
+                    <FiEdit
+                        onClick={() => editIconClick(person)}
+                    />
                     <p>{person.name}</p>
                     <p>{person.location}</p>
                     <p>{person.website}</p>
@@ -78,7 +94,7 @@ const ArtistIndex = (props) => {
         })
 
 
-            console.log('This is the artist array', artistArray)
+            // console.log('This is the artist array', artistArray)
 
 
     return(
@@ -121,6 +137,16 @@ const ArtistIndex = (props) => {
             handleClose={() => setCreateArtistModalShow(false)}
             triggerRefresh={() => setUpdated(prev => !prev)}
             
+        />
+
+        <EditArtistModal
+            user={user}
+            artist={artistInfo}
+            show={editArtistModalShow}
+            updateArtist={updateArtist}
+            msgAlert={msgAlert}
+            handleClose={() => setEditArtistModalShow(false)}
+            triggerRefresh={() => setUpdated(prev => !prev)}
         />
         
         
