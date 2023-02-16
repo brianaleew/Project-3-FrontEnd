@@ -7,7 +7,11 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+<<<<<<< HEAD
 import '../shared/FormStyles.css'
+=======
+import './SignIn.css'
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 
 const SignIn = props => {
     // constructor(props) {
@@ -58,11 +62,19 @@ const SignIn = props => {
 
     return (
         <div className='main'>
+<<<<<<< HEAD
             <div className='form-styles__container gh-flex-clm'>
                 <h5>welcome back, please sign in</h5>
                 <Form
                     onSubmit={onSignIn}
                     className='form-styles__form'
+=======
+            <div className='sign-in__container gh-flex-clm'>
+                <h5>welcome back, please sign in</h5>
+                <Form
+                    onSubmit={onSignIn}
+                    className='gh-flex-clm'
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
                 >
                     <Form.Group controlId='email'>
                         <Form.Label>email</Form.Label>

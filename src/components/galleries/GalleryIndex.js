@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react'
 import { getAllGalleries } from '../../api/gallery'
 import messages from '../shared/AutoDismissAlert/messages'
 import { FiImage, FiCompass } from 'react-icons/fi'
+<<<<<<< HEAD
 
 import './GalleryIndex.css'
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 
 import './GalleryIndex.css'
 
@@ -30,10 +33,14 @@ const GalleryIndex = props => {
     const galleryArray = galleriesA.map(gallery => (
         <li key={gallery._id}>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <p>{gallery.name}</p>
 =======
             <h5>{gallery.name}</h5>
 >>>>>>> bf30351 (landing page style part 1)
+=======
+            <p>{gallery.name}</p>
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
             <img
                 className='gallery-index__gallery-image'
                 src={'/art-gallery.jpg'}
@@ -46,6 +53,9 @@ const GalleryIndex = props => {
 
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
         <div className='main'>
             <div className='gallery-index__hero'>
                 <img
@@ -70,6 +80,7 @@ const GalleryIndex = props => {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div className='gh-main-container'>
                 <p>recommended galleries</p>
 =======
@@ -82,6 +93,10 @@ const GalleryIndex = props => {
             <div className='gh-main-container'>
                 <h4>recommended galleries</h4>
 >>>>>>> bf30351 (landing page style part 1)
+=======
+            <div className='gh-main-container'>
+                <p>recommended galleries</p>
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
                 <ul className='gh-grid-400'>{galleryArray}</ul>
             </div>
         </div>

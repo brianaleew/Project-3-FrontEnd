@@ -1,23 +1,35 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 .gallery-index__hero {
     position: relative;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 .gallery-index__hero-image {
     max-width: 100%;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 .gallery-index__hero-icons {
     margin-top: 2rem;
     align-items: center;
     justify-content: space-around;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 .gallery-index__main-container {
     width: min(640px, 97%);
     margin-inline: auto;
@@ -28,11 +40,18 @@
     object-fit: scale-down;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 
 @media (min-width: 640px) {
     .gallery-index__hero-icons {
         position: absolute;
+<<<<<<< HEAD
         bottom: 10%;
+=======
+        bottom: 0;
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
         left: 0;
         right: 0;
         z-index: 10;
@@ -41,5 +60,8 @@
         color: white;
     }
 }
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
+=======
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)

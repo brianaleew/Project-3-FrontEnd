@@ -5,6 +5,7 @@ import './Footer.css'
 const Footer = props => {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className='footer gh-flex-row-c'>
             <FaRegCopyright />
             <p>Hugz4Bugz</p>
@@ -14,6 +15,11 @@ const Footer = props => {
                 <FaRegCopyright /> Hugz4Bugz
             </p>
 >>>>>>> bf30351 (landing page style part 1)
+=======
+        <div className='footer gh-flex-row-c'>
+            <FaRegCopyright />
+            <p>Hugz4Bugz</p>
+>>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
         </div>
     )
 }
