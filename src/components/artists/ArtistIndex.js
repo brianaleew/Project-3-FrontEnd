@@ -10,12 +10,14 @@ import messages, { deleteArtistFailure, deleteArtistSuccess, getArtistsFailure }
 
 const ArtistIndex = (props) => {
 
+    const { msgAlert, user, artist, triggerRefresh, editArtist } = props
+
     const [artists, setArtists] = useState(null)
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [editArtistModalShow, seteditArtistModalShow] = useState(false)
     const [createArtistModalShow, setcreateArtistModalShow] = useState(false)
-    const { msgAlert } = props
+    
     
     //making api call
     useEffect(() => {
@@ -121,7 +123,7 @@ const ArtistIndex = (props) => {
             artist={artist}
             show={editArtistModalShow}
             handleClose={() => seteditArtistModalShow(false)}
-            triggerRefresh={() => }
+            triggerRefresh={() => setUpdated(true)}
             updateArtist={updateArtist}
             editArtist={editArtist}
             msgAlert={msgAlert}

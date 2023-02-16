@@ -15,6 +15,7 @@ import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowGallery from './components/galleries/ShowGallery'
 import CreateGallery from './components/galleries/CreateGallery'
+import ArtistIndex from './components/artists/ArtistIndex'
 
 const App = () => {
     const [user, setUser] = useState(null)
@@ -115,6 +116,23 @@ const App = () => {
                         />
                     }
                 />
+                 <Route
+                    path='/artists'
+                    element={
+                        <RequireAuth user={user}>
+                            <ArtistIndex
+                                msgAlert={msgAlert}
+                                user={user}
+                            />
+                        </RequireAuth>
+                    }
+                />
+
+
+
+
+
+
             </Routes>
             {msgAlerts.map(msgAlert => (
                 <AutoDismissAlert
