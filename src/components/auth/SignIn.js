@@ -7,7 +7,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import './SignIn.css'
+import '../shared/FormStyles.css'
 
 const SignIn = props => {
     // constructor(props) {
@@ -58,11 +58,11 @@ const SignIn = props => {
 
     return (
         <div className='main'>
-            <div className='sign-in__container gh-flex-clm'>
+            <div className='form-styles__container gh-flex-clm'>
                 <h5>welcome back, please sign in</h5>
                 <Form
                     onSubmit={onSignIn}
-                    className='gh-flex-clm'
+                    className='form-styles__form'
                 >
                     <Form.Group controlId='email'>
                         <Form.Label>email</Form.Label>

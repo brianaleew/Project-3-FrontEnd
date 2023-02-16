@@ -8,6 +8,8 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
+import '../shared/FormStyles.css'
+
 const SignUp = props => {
     // constructor(props) {
     // 	super(props)
@@ -64,10 +66,13 @@ const SignUp = props => {
     }
 
     return (
-        <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+        <div className='main'>
+            <div className='form-styles__container gh-flex-clm'>
                 <h3>Sign Up</h3>
-                <Form onSubmit={onSignUp}>
+                <Form
+                    onSubmit={onSignUp}
+                    className='form-styles__form'
+                >
                     <Form.Group controlId='email'>
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
@@ -116,9 +121,7 @@ const SignUp = props => {
                         variant='primary'
                         type='submit'
                     >
-
                         Submit
-
                     </Button>
                 </Form>
             </div>
