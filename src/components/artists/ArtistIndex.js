@@ -5,24 +5,27 @@ import EditArtistModal from './EditArtistModal'
 import CreateArtistModal from './CreateArtistModal'
 import ArtistForm from '../shared/ArtistForm'
 import messages, { deleteArtistFailure, deleteArtistSuccess, getArtistsFailure } from '../shared/AutoDismissAlert/messages'
+import { FiEdit, FiTrash, FiPlus } from  'react-icons/fi'
 
 
 
 const ArtistIndex = (props) => {
 
-    const { msgAlert, user, artist, triggerRefresh, editArtist } = props
+    const { msgAlert, user, triggerRefresh } = props
 
-    const [artists, setArtists] = useState(null)
+    const [artistArray, setArtistArray] = useState(null)
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
-    const [editArtistModalShow, seteditArtistModalShow] = useState(false)
-    const [createArtistModalShow, setcreateArtistModalShow] = useState(false)
+    const [editArtistModalShow, setEditArtistModalShow] = useState(false)
+    const [createArtistModalShow, setCreateArtistModalShow] = useState(false)
     
     
     //making api call
     useEffect(() => {
         getAllArtists()
-            .then(res => setArtists(res.data.artists))
+            .then(res => {console.log('This is artists', res.data.artists)
+                setArtistArray(res.data.artists)})
+
             //handle errors by sending user an error message
             .catch(err => {
                 msgAlert({
@@ -41,39 +44,38 @@ const ArtistIndex = (props) => {
     }
 
     //the function for deleting artists from the index
-    const removeArtist = () => {
-        //calling api delete func 
-        deleteArtist(user, artist.id)
-            //sending success message to user
-            .then(() => {
-                msgAlert({
-                    heading: 'Deletion Success',
-                    message: deleteArtistSuccess,
-                    variant: 'success'
-                })
-            })
-            .then(() => triggerRefresh())
-            .catch(() => {
-                msgAlert({
-                    heading: 'Deletion Success',
-                    message: deleteArtistFailure,
-                    variant: 'danger'
-                })
-            })
-    }
+    // const removeArtist = () => {
+    //     //calling api delete func 
+    //     deleteArtist(user, artist.id)
+    //         //sending success message to user
+    //         .then(() => {
+    //             msgAlert({
+    //                 heading: 'Deletion Success',
+    //                 message: deleteArtistSuccess,
+    //                 variant: 'success'
+    //             })
+    //         })
+    //         .then(() => triggerRefresh())
+    //         .catch(() => {
+    //             msgAlert({
+    //                 heading: 'Deletion Success',
+    //                 message: deleteArtistFailure,
+    //                 variant: 'danger'
+    //             })
+    //         })
+    // }
     //Once api call gets artists, iterate through each one and render this style
-    const artistDisplays = artists.map(artist => {
+    const artistDisplays = artistArray.map(person => {
             return (
                 // not final
                 <div>
-                    <img src={artist.img} alt='picture of the artist' />
-                    <p>{artist.name}</p>
-                    <p>{artist.location}</p>
-                    <p>{artist.website}</p>
+                    <img src={person.img} alt='picture of the artist' />
+                    <p>{person.name}</p>
+                    <p>{person.location}</p>
+                    <p>{person.website}</p>
                 </div>
             )
         })
-
 
 
 
@@ -83,7 +85,12 @@ const ArtistIndex = (props) => {
         <>
         <div>
             <h3>Total Artists: </h3>
-            {/* add new artist button here */}    
+            <FiPlus 
+                onClick={() => setCreateArtistModalShow(true)}
+
+                
+            />  
+             
         </div>
 
 
@@ -109,25 +116,15 @@ const ArtistIndex = (props) => {
         {/* importing Modals below...may still need some fine tuning */}
         <CreateArtistModal
             user={user}
-            artist={artist}
-            show={createArtistModalShow(false)}
-            createArtist={createArtist}
+            show={createArtistModalShow}
             msgAlert={msgAlert}
+            handleClose={() => setCreateArtistModalShow(false)}
+            triggerRefresh={() => setUpdated(prev => !prev)}
             
         />
         
         
-        
-        <EditArtistModal
-            user={user}
-            artist={artist}
-            show={editArtistModalShow}
-            handleClose={() => seteditArtistModalShow(false)}
-            triggerRefresh={() => setUpdated(true)}
-            updateArtist={updateArtist}
-            editArtist={editArtist}
-            msgAlert={msgAlert}
-        />
+         
 
         
         </>

@@ -39,6 +39,7 @@ const CreateArtistModal = (props) => {
                 ...prevArtist, ...updatedArtist
             }
     })
+} 
     //setting up behavior for when the Submit button is clicked
     const onSubmit = (e) => {
         e.preventDefault()
@@ -64,22 +65,25 @@ const CreateArtistModal = (props) => {
             })
     }
 
-    return (
-        <>
-        <Modal show={show} onHide={handleClose}>
+    
+  
+  return (
+        
+    <Modal show={show} onHide={handleClose}>
 
-            <Modal.Body>
-                <ArtistForm
-                    artist={artist}
-                    handleChange={onChange} 
-                    handleSubmit={onSubmit}
-                    heading="Add A New Artist"
-                />
-            </Modal.Body>
-        </Modal>
-        </>
-    )
-  }
+        <Modal.Body>
+            <h1>Hi</h1>
+            <ArtistForm
+                artist={artist}
+                handleChange={onChange} 
+                handleSubmit={onSubmit}
+                heading="Add A New Artist"
+
+            /> 
+        </Modal.Body>
+    </Modal>
+    
+)
 }
 
 export default CreateArtistModal
