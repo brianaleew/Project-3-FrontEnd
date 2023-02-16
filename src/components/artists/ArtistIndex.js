@@ -4,6 +4,7 @@ import { getAllArtists } from '../../api/artist'
 import messages, { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 import { createArtist, updateArtist, deleteArtist } from '../../api/artist'
 import EditArtistModal from './EditArtistModal'
+import CreateArtistModal from './CreateArtistModal'
 import ArtistForm from '../shared/ArtistForm'
 
 
@@ -14,6 +15,8 @@ const ArtistIndex = (props) => {
 
     const [artists, setArtists] = useState(null)
     const [error, setError] = useState(false)
+    const [EditArtistModal, setEditArtistModal] = useState(false)
+    const [CreateArtistModal, setCreateArtistModal] = useState(false)
     const { msgAlert } = props
     
     //making api call
@@ -30,7 +33,10 @@ const ArtistIndex = (props) => {
                 
             })
 
-    }, [])
+    }, [updated])
+
+    //the function for deleting artists from the index
+    
 
 
 
