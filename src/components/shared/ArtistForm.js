@@ -2,7 +2,7 @@
 
 import { Form, Button, Container } from 'react-bootstrap'
 
-const artistForm = (props) => {
+const ArtistForm = (props) => {
     //pulling in props we need 
     const { artist, handleChange, handleSubmit, heading } = props 
 
