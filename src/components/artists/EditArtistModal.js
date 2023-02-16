@@ -3,18 +3,19 @@
 import React, { useState } from 'react' 
 import { Modal } from 'react-bootstrap'
 import ArtistForm from '../shared/ArtistForm'
+// import { updateArtist } from '../../api/artist'
 import { updateArtistFailure, updateArtistSuccess } from '../shared/AutoDismissAlert/messages'
 
 const EditArtistModal = (props) => {
     //all the props we need 
-    const { user, show, handleClose, updateArtist, msgAlert, triggerRefresh } = props 
+    const { user, show, artist, updateArtist, handleClose, msgAlert, triggerRefresh } = props 
     
-    const [artist, setArtist] = useState(props.artist)
+    const [artistInfo, setArtistInfo] = useState(props.artist)
     //linking names and values to what is input by users in form
     const onChange = (e) => {
         e.persist()
 
-        setArtist(prevArtist => {
+        setArtistInfo(prevArtist => {
             const updatedName = e.target.name 
             let updatedValue = e.target.value 
 
@@ -32,7 +33,7 @@ const EditArtistModal = (props) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        updateArtist(user, artist)
+        updateArtist(user, artistInfo)
             //closing modal
             .then(() => handleClose()) 
             //sending user the success message
@@ -55,13 +56,14 @@ const EditArtistModal = (props) => {
             })
     }
 
+    console.log('this is artistInfo', artistInfo._id)
     return (
         <>
         <Modal show={show} onHide={handleClose}>
 
             <Modal.Body>
                 <ArtistForm
-                    artist={artist}
+                    artist={artistInfo}
                     handleChange={onChange} 
                     handleSubmit={onSubmit}
                     heading="Update The Artist"
