@@ -7,60 +7,65 @@ import messages from '../shared/AutoDismissAlert/messages'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const SignIn = (props) => {
-	// constructor(props) {
-	// 	super(props)
+import './SignIn.css'
 
-	// 	this.state = {
-	// 		email: '',
-	// 		password: '',
-	// 	}
-	// }
+const SignIn = props => {
+    // constructor(props) {
+    // 	super(props)
+
+    // 	this.state = {
+    // 		email: '',
+    // 		password: '',
+    // 	}
+    // }
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
 
-	// handleChange = (event) =>
-	// 	this.setState({
-	// 		[event.target.name]: event.target.value,
-	// 	})
+    // handleChange = (event) =>
+    // 	this.setState({
+    // 		[event.target.name]: event.target.value,
+    // 	})
 
-	const onSignIn = (event) => {
-		event.preventDefault()
+    const onSignIn = event => {
+        event.preventDefault()
         console.log('the props', props)
-		const { msgAlert, setUser } = props
+        const { msgAlert, setUser } = props
 
-        const credentials = {email, password}
+        const credentials = { email, password }
 
-		signIn(credentials)
-			.then((res) => setUser(res.data.user))
-			.then(() =>
-				msgAlert({
-					heading: 'Sign In Success',
-					message: messages.signInSuccess,
-					variant: 'success',
-				})
-			)
-			.then(() => navigate('/'))
-			.catch((error) => {
+        signIn(credentials)
+            .then(res => setUser(res.data.user))
+            .then(() =>
+                msgAlert({
+                    heading: 'Sign In Success',
+                    message: messages.signInSuccess,
+                    variant: 'success',
+                })
+            )
+            .then(() => navigate('/'))
+            .catch(error => {
                 setEmail('')
                 setPassword('')
-				msgAlert({
-					heading: 'Sign In Failed with error: ' + error.message,
-					message: messages.signInFailure,
-					variant: 'danger',
-				})
-			})
-	}
+                msgAlert({
+                    heading: 'Sign In Failed with error: ' + error.message,
+                    message: messages.signInFailure,
+                    variant: 'danger',
+                })
+            })
+    }
 
     return (
-        <div className='row'>
-            <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-                <h3>Sign In</h3>
-                <Form onSubmit={onSignIn}>
+        <div className='main'>
+            <div className='sign-in__container gh-flex-clm'>
+                <h5>welcome back, please sign in</h5>
+                <Form
+                    onSubmit={onSignIn}
+                    className='gh-flex-clm'
+                >
                     <Form.Group controlId='email'>
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>email</Form.Label>
                         <Form.Control
                             required
                             type='email'
@@ -71,7 +76,7 @@ const SignIn = (props) => {
                         />
                     </Form.Group>
                     <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label>password</Form.Label>
                         <Form.Control
                             required
                             name='password'
@@ -81,8 +86,11 @@ const SignIn = (props) => {
                             onChange={e => setPassword(e.target.value)}
                         />
                     </Form.Group>
-                    <Button variant='primary' type='submit'>
-                        Submit
+                    <Button
+                        variant='primary'
+                        type='submit'
+                    >
+                        submit
                     </Button>
                 </Form>
             </div>
