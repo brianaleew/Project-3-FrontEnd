@@ -19,6 +19,7 @@ import ArtistIndex from './components/artists/ArtistIndex'
 import EditGalleryModal from './components/galleries/EditGalleryModal'
 
 
+
 const App = () => {
     const [user, setUser] = useState(null)
     const [msgAlerts, setMsgAlerts] = useState([])
