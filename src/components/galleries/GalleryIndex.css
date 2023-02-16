@@ -1,17 +1,23 @@
+<<<<<<< HEAD
 .gallery-index__hero {
     position: relative;
 }
 
+=======
+>>>>>>> bf30351 (landing page style part 1)
 .gallery-index__hero-image {
     max-width: 100%;
 }
 
+<<<<<<< HEAD
 .gallery-index__hero-icons {
     margin-top: 2rem;
     align-items: center;
     justify-content: space-around;
 }
 
+=======
+>>>>>>> bf30351 (landing page style part 1)
 .gallery-index__main-container {
     width: min(640px, 97%);
     margin-inline: auto;
@@ -21,6 +27,7 @@
     max-width: 100%;
     object-fit: scale-down;
 }
+<<<<<<< HEAD
 
 @media (min-width: 640px) {
     .gallery-index__hero-icons {
@@ -34,3 +41,5 @@
         color: white;
     }
 }
+=======
+>>>>>>> bf30351 (landing page style part 1)

@@ -5,6 +5,8 @@ import { FiImage, FiCompass } from 'react-icons/fi'
 
 import './GalleryIndex.css'
 
+import './GalleryIndex.css'
+
 const GalleryIndex = props => {
     const { user, msgAlert } = props
     const [galleriesA, setGalleriesA] = useState([])
@@ -27,7 +29,11 @@ const GalleryIndex = props => {
     console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
         <li key={gallery._id}>
+<<<<<<< HEAD
             <p>{gallery.name}</p>
+=======
+            <h5>{gallery.name}</h5>
+>>>>>>> bf30351 (landing page style part 1)
             <img
                 className='gallery-index__gallery-image'
                 src={'/art-gallery.jpg'}
@@ -39,6 +45,7 @@ const GalleryIndex = props => {
     console.log(galleryArray)
 
     return (
+<<<<<<< HEAD
         <div className='main'>
             <div className='gallery-index__hero'>
                 <img
@@ -65,6 +72,16 @@ const GalleryIndex = props => {
             </div>
             <div className='gh-main-container'>
                 <p>recommended galleries</p>
+=======
+        <div>
+            <img
+                className='gallery-index__hero-image'
+                src={'/art-gallery.jpg'}
+                alt='hero'
+            />
+            <div className='gh-main-container'>
+                <h4>recommended galleries</h4>
+>>>>>>> bf30351 (landing page style part 1)
                 <ul className='gh-grid-400'>{galleryArray}</ul>
             </div>
         </div>

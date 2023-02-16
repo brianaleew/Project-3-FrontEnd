@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 .footer {
     width: fit-content;
     padding-block: 5.5rem;
+=======
+.footer > p {
+    width: fit-content;
+    margin-block: 5.5rem;
+>>>>>>> bf30351 (landing page style part 1)
     margin-inline: auto;
 }
