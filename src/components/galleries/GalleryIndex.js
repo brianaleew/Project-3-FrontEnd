@@ -184,12 +184,10 @@ const GalleryIndex = props => {
 =======
 =======
         <div>
-            <img
-                src='Images/art-gallery.jpg'
-                alt='hero'
-            ></img>
-            <div>
-                <h1>Recommended Galleries</h1>
+        <img src =" "></img>
+        <div>
+
+            <h1>Recommended Galleries</h1>
 
                 <ul>{galleryArray}</ul>
 >>>>>>> ea1d367 (ll)
