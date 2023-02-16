@@ -21,6 +21,12 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+		<Nav.Item className='m-2'>
+			<Link to='artists' style={linkStyle}>
+				Artist Index 
+			</Link>
+		</Nav.Item>
+
 	</>
 )
 
