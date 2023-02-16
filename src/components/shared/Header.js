@@ -26,6 +26,11 @@ const authenticatedOptions = (
 				Artist Index 
 			</Link>
 		</Nav.Item>
+		<Nav.Item className='m-2'>
+			<Link to='artists/:id' style={linkStyle}>
+				Artist Show 
+			</Link>
+		</Nav.Item>
 
 	</>
 )

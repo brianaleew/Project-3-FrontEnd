@@ -13,7 +13,7 @@ const ArtistIndex = (props) => {
 
     const { msgAlert, user, triggerRefresh } = props
 
-    const [artistArray, setArtistArray] = useState(null)
+    const [artistArray, setArtistArray] = useState([])
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [editArtistModalShow, setEditArtistModalShow] = useState(false)
@@ -78,7 +78,7 @@ const ArtistIndex = (props) => {
         })
 
 
-
+            console.log('This is the artist array', artistArray)
 
 
     return(

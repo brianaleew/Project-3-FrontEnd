@@ -9,7 +9,7 @@ import { Modal } from 'react-bootstrap'
 
 const CreateArtistModal = (props) => {
     //getting props we need
-    const { user, show, handleClose, createArtist, msgAlert } = props 
+    const { user, show, handleClose, msgAlert } = props 
 
     //pulling the navigation func 
     const navigate = useNavigate()
@@ -18,7 +18,8 @@ const CreateArtistModal = (props) => {
         name: '',
         description: '',
         location: '',
-        website: ''
+        website: '',
+        img: ''
     })
     
     const onChange = (e) => {
@@ -46,7 +47,7 @@ const CreateArtistModal = (props) => {
 
         createArtist(user, artist)
             //navigate the user to the artist show page
-            .then(res => { navigate(`/artists/${res.data.artist.id}`)})
+            .then(res => { navigate(`/artists/`)})
             //show the user a successful message alert
             .then(() => {
                 msgAlert({

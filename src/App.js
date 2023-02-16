@@ -124,12 +124,21 @@ const App = () => {
                             <ArtistIndex
                                 msgAlert={msgAlert}
                                 user={user}
-                                
-
                             />
                         </RequireAuth>
                     }
                 />
+                {/* <Route
+                    path='/artists/:id'
+                    element={
+                        <RequireAuth user={user}>
+                            <ShowArtist
+                                msgAlert={msgAlert}
+                                user={user}
+                            />
+                        </RequireAuth>
+                    }
+                /> */}
 
 
 
