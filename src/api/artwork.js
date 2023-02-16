@@ -3,44 +3,34 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-//INDEX
-export const getAllArtists = () => {
-    return axios(`${apiUrl}/artists`)
-}
-
-//SHOW
-export const getOneArtist = id => {
-    return axios(`${apiUrl}/artists/${id}`)
-}
-
 //CREATE
-export const createArtist = (user, newArtist) => {
+export const createArtwork = (user, galleryId, newArtwork) => {
     return axios({
-        url: `${apiUrl}/artists`,
+        url: `${apiUrl}/artworks/${galleryId}`,
         method: 'POST',
         headers: {
             Authorization: `Token token=${user.token}`,
         },
-        data: { artist: newArtist },
+        data: { artwork: newArtwork },
     })
 }
 
 // Update
-export const updateArtist = (user, updatedArtist) => {
+export const updateArtwork = (user, galleryId, updatedArtwork) => {
     return axios({
-        url: `${apiUrl}/artists/${updatedArtist.id}`,
+        url: `${apiUrl}/artists/${galleryId}/${updatedArtwork.id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`,
         },
-        data: { artist: updatedArtist },
+        data: { artwork: updatedArtwork },
     })
 }
 
 //Delete
-export const deleteArtist = (user, artistId) => {
+export const deleteArtwork = (user, galleryId, artworkId) => {
     return axios({
-        url: `${apiUrl}/artists/${artistId}`,
+        url: `${apiUrl}/artists/${galleryId}/${artworkId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`,
