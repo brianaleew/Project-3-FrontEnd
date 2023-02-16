@@ -1,13 +1,10 @@
 // This component will serve as an Index of Artists but also give the user the option to edit or delete the artist
 import { useState, useEffect } from 'react'
-import { getAllArtists } from '../../api/artist'
-import messages, { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
-import { createArtist, updateArtist, deleteArtist } from '../../api/artist'
+import { getAllArtists, createArtist, updateArtist, deleteArtist } from '../../api/artist'
 import EditArtistModal from './EditArtistModal'
 import CreateArtistModal from './CreateArtistModal'
 import ArtistForm from '../shared/ArtistForm'
-
-
+import messages, { deleteArtistFailure, deleteArtistSuccess, getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 
 
 
@@ -15,8 +12,9 @@ const ArtistIndex = (props) => {
 
     const [artists, setArtists] = useState(null)
     const [error, setError] = useState(false)
-    const [EditArtistModal, setEditArtistModal] = useState(false)
-    const [CreateArtistModal, setCreateArtistModal] = useState(false)
+    const [updated, setUpdated] = useState(false)
+    const [editArtistModalShow, seteditArtistModalShow] = useState(false)
+    const [createArtistModalShow, setcreateArtistModalShow] = useState(false)
     const { msgAlert } = props
     
     //making api call
@@ -36,16 +34,30 @@ const ArtistIndex = (props) => {
     }, [updated])
 
     //the function for deleting artists from the index
-    
-
-
-
-
-
-
+    const removeArtist = () => {
+        //calling api delete func 
+        deleteArtist(user, artist.id)
+            //sending success message to user
+            .then(() => {
+                msgAlert({
+                    heading: 'Deletion Success',
+                    message: deleteArtistSuccess,
+                    variant: 'success'
+                })
+            })
+            .then(() => )
+            .catch(() => {
+                msgAlert({
+                    heading: 'Deletion Success',
+                    message: deleteArtistFailure,
+                    variant: 'danger'
+                })
+            })
+    }
+    //Once api call gets artists, iterate through each one and render this style
     const artistDisplays = artists.map(artist => {
             return (
-                // artist div render here
+                // not final
                 <div>
                     <img src={artist.img} alt='picture of the artist' />
                     <p>{artist.name}</p>
@@ -74,8 +86,41 @@ const ArtistIndex = (props) => {
 
         <div>
             {/* icon btns for edit and delete go here */}
+            {/* making modal buttons
+            edit modal button
+            <Button onClick{() => setEditModalShow(true)}
+            > Edit Artist</Button>
+
+            create modal button
+            <Button onClick{() => setEditModalShow(true)}
+            > Edit Artist</Button>
+            */}
         </div>
 
+
+
+        {/* importing Modals below...may still need some fine tuning */}
+        <CreateArtistModal
+            user={user}
+            artist={artist}
+            show={createArtistModalShow}
+            createArtist={createArtist}
+            msgAlert={msgAlert}
+            
+        />
+        
+        
+        
+        <EditArtistModal
+            user={user}
+            artist={artist}
+            handleClose={() => seteditArtistModalShow(false)}
+            show={createArtistModalShow}
+            createArtist={createArtist}
+            msgAlert={msgAlert}
+        />
+
+        
         </>
     )
 }
