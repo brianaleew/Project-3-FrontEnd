@@ -25,8 +25,11 @@ html {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 =======
 body {
     min-height: 100vh;
@@ -38,7 +41,12 @@ body {
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 =======
 >>>>>>> c6bc717 (landing page style part 1)
+<<<<<<< HEAD
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+=======
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 ul,
 ol {
     margin: 0 !important;
@@ -66,6 +74,7 @@ p {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     margin: 0 !important;
 =======
     margin: 0;
@@ -74,11 +83,19 @@ p {
     margin: 0 !important;
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 =======
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
     margin: 0 !important;
 =======
     margin: 0;
 >>>>>>> c6bc717 (landing page style part 1)
+<<<<<<< HEAD
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+=======
+    margin: 0 !important;
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
     padding: 0;
 }
 
@@ -88,6 +105,9 @@ backgroundColor: 'rgb(180,196,250)',
 background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 72%)' */
 /* GENERAL CLASSES */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 #root {
     min-height: 100vh;
     display: flex;
@@ -124,6 +144,9 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     gap: 1rem;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 
 .gh-flex-row {
     display: flex;
@@ -136,8 +159,11 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     gap: 0.5rem;
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 .gh-flex-clm {
     display: flex;
     flex-direction: column;
@@ -145,8 +171,11 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 /* NavBar */
 .navbar-toggler:focus,
 .navbar-toggler:active,
@@ -210,5 +239,9 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     justify-content: center;
     gap: 0.5rem;
 }
+<<<<<<< HEAD
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 /* NavBar */

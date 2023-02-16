@@ -1,25 +1,35 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 .gallery-index__hero {
     position: relative;
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 .gallery-index__hero-image {
     max-width: 100%;
 }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 .gallery-index__hero-icons {
     margin-top: 2rem;
     align-items: center;
@@ -27,10 +37,13 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 .gallery-index__main-container {
     width: min(640px, 97%);
     margin-inline: auto;
@@ -42,17 +55,24 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 
 @media (min-width: 640px) {
     .gallery-index__hero-icons {
         position: absolute;
 <<<<<<< HEAD
+<<<<<<< HEAD
         bottom: 10%;
 =======
         bottom: 0;
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+        bottom: 0;
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
         left: 0;
         right: 0;
         z-index: 10;
@@ -62,9 +82,13 @@
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bf30351 (landing page style part 1)
 =======
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
 =======
 >>>>>>> 5c47a7c (landing page style part 1)
+=======
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)

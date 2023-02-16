@@ -11,7 +11,11 @@ import Button from 'react-bootstrap/Button'
 import '../shared/FormStyles.css'
 =======
 import './SignIn.css'
+<<<<<<< HEAD
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
 
 const SignIn = props => {
     // constructor(props) {
@@ -74,7 +78,11 @@ const SignIn = props => {
                 <Form
                     onSubmit={onSignIn}
                     className='gh-flex-clm'
+<<<<<<< HEAD
 >>>>>>> bcd5f65 (moar landing page styling and sign in page styling)
+=======
+>>>>>>> a7557ab (moar landing page styling and sign in page styling)
+>>>>>>> 23e419c (moar landing page styling and sign in page styling)
                 >
                     <Form.Group controlId='email'>
                         <Form.Label>email</Form.Label>
