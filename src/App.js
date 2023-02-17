@@ -16,6 +16,7 @@ import ChangePassword from './components/auth/ChangePassword'
 import ShowGallery from './components/galleries/ShowGallery'
 import CreateGallery from './components/galleries/CreateGallery'
 import ArtistIndex from './components/artists/ArtistIndex'
+import ShowArtist from './components/artists/ShowArtist'
 
 
 
@@ -130,17 +131,15 @@ const App = () => {
                         </RequireAuth>
                     }
                 />
-                {/* <Route
+                <Route
                     path='/artists/:id'
                     element={
-                        <RequireAuth user={user}>
                             <ShowArtist
                                 msgAlert={msgAlert}
                                 user={user}
                             />
-                        </RequireAuth>
                     }
-                /> */}
+                />
 
 
 
