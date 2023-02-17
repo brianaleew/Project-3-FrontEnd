@@ -70,7 +70,7 @@ const ArtistIndex = props => {
     // }
     //Once api call gets artists, iterate through each one and render this style
 
-    const artistDisplays = artistArray.map((person, i) => (
+    
 
     const artistList = artistArray.map((person, i) => (
 
