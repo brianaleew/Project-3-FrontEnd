@@ -3,7 +3,12 @@
 import apiUrl from '../apiConfig'
 import axios from 'axios'
 
-//CREATE
+// INDEX
+export const getAllArtwork = galleryId => {
+    return axios(`${apiUrl}/artworks/${galleryId}`)
+}
+
+// CREATE
 export const createArtwork = (user, galleryId, newArtwork) => {
     return axios({
         url: `${apiUrl}/artworks/${galleryId}`,
@@ -15,7 +20,7 @@ export const createArtwork = (user, galleryId, newArtwork) => {
     })
 }
 
-// Update
+// UPDATE
 export const updateArtwork = (user, galleryId, updatedArtwork) => {
     return axios({
         url: `${apiUrl}/artists/${galleryId}/${updatedArtwork.id}`,
@@ -27,7 +32,7 @@ export const updateArtwork = (user, galleryId, updatedArtwork) => {
     })
 }
 
-//Delete
+// DELETE
 export const deleteArtwork = (user, galleryId, artworkId) => {
     return axios({
         url: `${apiUrl}/artists/${galleryId}/${artworkId}`,
