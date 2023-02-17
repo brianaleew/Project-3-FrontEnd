@@ -23,10 +23,11 @@ const EditArtistModal = props => {
 
     const [artistInfo, setArtistInfo] = useState(artist)
 
-    useEffect(() => {
-        setArtistInfo(artist)
-        console.log('ARTISTINFO ', artistInfo)
-    }, [])
+    // useEffect(() => {
+    //     setArtistInfo(artist)
+    //     console.log('ARTISTINFO ', artistInfo)
+    // }, [])
+
 
     //linking names and values to what is input by users in form
     const onChange = e => {
