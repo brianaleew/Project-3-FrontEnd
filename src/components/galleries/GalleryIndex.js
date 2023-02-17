@@ -4,6 +4,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 import { FiImage, FiCompass } from 'react-icons/fi'
 
 import './GalleryIndex.css'
+import { Link } from 'react-router-dom'
 
 const GalleryIndex = props => {
     const { user, msgAlert } = props
@@ -27,12 +28,15 @@ const GalleryIndex = props => {
     console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
         <li key={gallery._id}>
+            <Link to = {`/galleries/${gallery._id}`}>
             <p>{gallery.name}</p>
             <img
                 className='gallery-index__gallery-image'
                 src={'/art-gallery.jpg'}
                 alt='hero'
             />
+
+            </Link>
         </li>
     ))
 

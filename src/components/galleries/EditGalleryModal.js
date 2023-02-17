@@ -1,6 +1,3 @@
-// this modal is rendered by ShowPet
-// The state that controls whether this is open or not live in ShowPet
-// the state and the updaterfunction associated with that state is passed here as a prop.
 import React, { useState } from 'react'
 import { Modal } from 'react-bootstrap'
 import GalleryForm from '../shared/GalleryForm'
