@@ -7,8 +7,11 @@ export const getAllGalleries = () => {
     return axios(`${apiUrl}/galleries`)
 }
 
+export const getMyGalleries = id => {
+    return axios(`${apiUrl}/galleries-mine/${id}`)
+}
 // READ -> Show
-export const getOneGallery = (id) => {
+export const getOneGallery = id => {
     return axios(`${apiUrl}/galleries/${id}`)
 }
 
@@ -20,9 +23,9 @@ export const createGallery = (user, newGallery) => {
         url: `${apiUrl}/galleries`,
         method: 'POST',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token token=${user.token}`,
         },
-        data: { gallery: newGallery }
+        data: { gallery: newGallery },
     })
 }
 
@@ -32,9 +35,9 @@ export const updateGallery = (user, updatedGallery) => {
         url: `${apiUrl}/galleries/${updatedGallery.id}`,
         method: 'PATCH',
         headers: {
-            Authorization: `Token token=${user.token}`
+            Authorization: `Token token=${user.token}`,
         },
-        data: { gallery: updatedGallery }
+        data: { gallery: updatedGallery },
     })
 }
 
@@ -44,7 +47,7 @@ export const removeGallery = (user, galleryId) => {
         url: `${apiUrl}/galleries/${galleryId}`,
         method: 'DELETE',
         headers: {
-            Authorization: `Token token=${user.token}`
-        }
+            Authorization: `Token token=${user.token}`,
+        },
     })
 }

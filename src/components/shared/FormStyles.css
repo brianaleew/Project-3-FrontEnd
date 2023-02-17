@@ -1,6 +1,5 @@
 .form-styles__container {
-    margin-block: 5rem;
-    margin-inline: auto;
+    margin: 5rem auto; 
     width: min(480px, 88%);
 }
 

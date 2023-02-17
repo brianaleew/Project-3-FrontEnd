@@ -1,19 +1,14 @@
-// This CreateArtist Component renders the ArtistForm
-
+// This CreateArtistModal component renders the ArtistForm on the Artist Index Page!
 import { useState } from 'react'
 import { createArtist } from '../../api/artist'
 import { createArtistSuccess, createArtistFailure } from '../shared/AutoDismissAlert/messages'
 import ArtistForm from '../shared/ArtistForm'
-import { useNavigate } from 'react-router-dom'
 import { Modal } from 'react-bootstrap'
 
 
 const CreateArtistModal = (props) => {
     //getting props we need
-    const { user, show, handleClose, msgAlert } = props 
-
-    //pulling the navigation func 
-    const navigate = useNavigate()
+    const { user, show, handleClose, msgAlert, triggerRefresh } = props 
     //setting artist initial state
     const [artist, setArtist] = useState({
         name: '',
@@ -22,11 +17,10 @@ const CreateArtistModal = (props) => {
         website: '',
         img: ''
     })
-    
+
+    //setting up how artists will change once values are input
     const onChange = (e) => {
         e.persist()
-        
-        //setting up how artists will change once values are input
         setArtist(prevArtist => {
             const updatedName = e.target.name 
             let updatedValue = e.target.value
@@ -47,8 +41,9 @@ const CreateArtistModal = (props) => {
         e.preventDefault()
 
         createArtist(user, artist)
-            //navigate the user to the artist show page
-            .then(res => { navigate(`/artists/${res.data.artist._id}`)})
+            //closing modal and refresh the page to reflect new artist
+            .then(() => handleClose())
+            .then(() => triggerRefresh())
             //show the user a successful message alert
             .then(() => {
                 msgAlert({
