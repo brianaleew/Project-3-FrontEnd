@@ -22,7 +22,7 @@ const ArtistIndex = props => {
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [createArtistModalShow, setCreateArtistModalShow] = useState(false)
-
+    console.log('this is updated', updated)
     //making api call
     useEffect(() => {
         getAllArtists()

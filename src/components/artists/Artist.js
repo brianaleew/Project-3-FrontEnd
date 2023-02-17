@@ -1,9 +1,9 @@
-import { useState, useRef, useLayoutEffect } from 'react'
+import { useState } from 'react'
 import { FiEdit, FiTrash } from 'react-icons/fi'
 import { updateArtist, deleteArtist } from '../../api/artist'
 import { Link } from 'react-router-dom'
 import { deleteArtistFailure, deleteArtistSuccess } from '../shared/AutoDismissAlert/messages'
-import { useNavigate } from 'react-router-dom'
+
 
 import EditArtistModal from './EditArtistModal'
 
@@ -11,13 +11,12 @@ const Artist = props => {
     const { person, user, msgAlert, triggerRefresh } = props
 
     const [editArtistModalShow, setEditArtistModalShow] = useState(false)
-    const navigate = useNavigate()
-    console.log(person)
 
     // the function for deleting artists from the index
     const removeArtist = () => {
         //calling api delete func
         deleteArtist(user, person._id)
+            .then(() => triggerRefresh())
             //sending success message to user
             .then(() => {
                 msgAlert({
@@ -26,8 +25,6 @@ const Artist = props => {
                     variant: 'success'
                 })
             })
-            .then(() => navigate('/artists'))
-            .then(triggerRefresh)
             .catch(() => {
                 msgAlert({
                     heading: 'Deletion Failed',
