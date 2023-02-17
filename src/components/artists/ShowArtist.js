@@ -7,9 +7,10 @@ import { getOneArtist } from '../../api/artist'
 import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 
 const ShowArtist = (props) => {
-
+    const { artist } = props
+    
     useEffect(() => {
-        getOneArtist(id)
+        getOneArtist(artist._id)
             .then(res => setArtist(res.data.artist))
             .catch(err => {
                 msgAlert({
