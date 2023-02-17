@@ -13,7 +13,7 @@ const GalleryIndex = props => {
     useEffect(() => {
         getAllGalleries()
             .then(res => {
-                console.log('res data: ', res.data.galleries)
+                // console.log('res data: ', res.data.galleries)
                 setGalleriesA(res.data.galleries)
             })
             .catch(err => {
@@ -25,7 +25,7 @@ const GalleryIndex = props => {
             })
     }, [])
 
-    console.log(galleriesA)
+    // console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
         <li key={gallery._id}>
             <Link to = {`/galleries/${gallery._id}`}>
@@ -40,7 +40,7 @@ const GalleryIndex = props => {
         </li>
     ))
 
-    console.log(galleryArray)
+    // console.log(galleryArray)
 
     return (
         <div className='main'>
