@@ -59,49 +59,50 @@ const ShowGallery = props => {
     if (!gallery) {
         return <LoadingScreen />
     }
+    //    console.log(user.isCurator)
 
-    const conditionalInterface = () => {
-        if (user.isCurator) {
-            return (
-                <div className='show-gallery__curator-interface'>
-                    <div className='show-gallery__links-container'>
-                        <Button
-                            className='btn btn-primary'
-                            onClick={() => setEditModalShow(true)}
-                        >
-                            manage gallery
-                        </Button>
-                        <Link to={`/artworks/${gallery.id}`}>
-                            manage exhibit
-                        </Link>
-                        <Link to={`/artists/${gallery.id}`}>
-                            manage artists
-                        </Link>
-                    </div>
-                </div>
-            )
-        } else {
-            return (
-                <div className='show-gallery__explorer-interface'>
-                    <div className='show-gallery__links-container'>
-                        <Link to={`/artworks/${gallery.id}`}>view exhibit</Link>
-                    </div>
-                    <div className='show-gallery__featured-artists'>
-                        <h4 className='show-gallery__featured-artists-title'>
-                            featured artists
-                        </h4>
-                        <ul className='show-gallery__featured-artists-list'>
-                            {/* a list of the artists added by the gallery's curator */}
-                            {/* shown as either a grid or a carousel */}
-                            {/* on the backend artworks route, instead of trowing an error */}
+    // const conditionalInterface = 
+    //     if (user.isCurator) {
+    //         return (
+    //             <div className='show-gallery__curator-interface'>
+    //                 <div className='show-gallery__links-container'>
+    //                     <div
+    //                         className='btn btn-primary'
+    //                         onClick={() => setEditModalShow(true)}
+    //                     >
+    //                         manage gallery
+    //                     </div>
+    //                     <Link to={`/artworks/${gallery.id}`}>
+    //                         manage exhibit
+    //                     </Link>
+    //                     <Link to={`/artists/${gallery.id}`}>
+    //                         manage artists
+    //                     </Link>
+    //                 </div>
+    //             </div>
+    //         )
+    //     } else {
+    //         return (
+    //             <div className='show-gallery__explorer-interface'>
+    //                 <div className='show-gallery__links-container'>
+    //                     <Link to={`/artworks/${gallery.id}`}>view exhibit</Link>
+    //                 </div>
+    //                 <div className='show-gallery__featured-artists'>
+    //                     <h4 className='show-gallery__featured-artists-title'>
+    //                         featured artists
+    //                     </h4>
+    //                     <ul className='show-gallery__featured-artists-list'>
+    //                         {/* a list of the artists added by the gallery's curator */}
+    //                         {/* shown as either a grid or a carousel */}
+    //                         {/* on the backend artworks route, instead of trowing an error */}
 
-                            {/* if the user is not a creator, maybe */}
-                        </ul>
-                    </div>
-                </div>
-            )
-        }
-    }
+    //                         {/* if the user is not a creator, maybe */}
+    //                     </ul>
+    //                 </div>
+    //             </div>
+    //         )
+    //     }
+    
     return (
         <div className='show_gallery__gallery-container'>
             <div className='show-gallery__gallery-hero'>
@@ -123,7 +124,51 @@ const ShowGallery = props => {
                     {gallery.description}
                 </p>
             </div>
-            {conditionalInterface}
+            {user.isCurator ? 
+            
+            (
+              
+                <div className='show-gallery__curator-interface'>
+                    <div className='show-gallery__links-container'>
+                        <div
+                            className='btn btn-primary'
+                            onClick={() => setEditModalShow(true)}
+                        >
+                            manage gallery
+                        </div>
+                        <Link to={`/artworks/${gallery.id}`}>
+                            manage exhibit
+                        </Link>
+                        <Link to={`/artists/${gallery.id}`}>
+                            manage artists
+                        </Link>
+                    </div>
+                </div>
+
+            )
+
+            :
+            (
+             
+                <div className='show-gallery__explorer-interface'>
+                    <div className='show-gallery__links-container'>
+                        <Link to={`/artworks/${gallery.id}`}>view exhibit</Link>
+                    </div>
+                    <div className='show-gallery__featured-artists'>
+                        <h4 className='show-gallery__featured-artists-title'>
+                            featured artists
+                        </h4>
+                        <ul className='show-gallery__featured-artists-list'>
+                            {/* a list of the artists added by the gallery's curator */}
+                            {/* shown as either a grid or a carousel */}
+                            {/* on the backend artworks route, instead of trowing an error */}
+
+                            {/* if the user is not a creator, maybe */}
+                        </ul>
+                    </div>
+                </div>
+            )
+                }
             
             <EditGalleryModal
 
