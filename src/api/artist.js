@@ -28,7 +28,7 @@ export const createArtist = (user, newArtist) => {
 // Update
 export const updateArtist = (user, updatedArtist) => {
     return axios({
-        url: `${apiUrl}/artists/${updatedArtist.id}`,
+        url: `${apiUrl}/artists/${updatedArtist._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`,
