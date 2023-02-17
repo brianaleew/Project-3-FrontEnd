@@ -1,7 +1,9 @@
 import { useState, useRef, useLayoutEffect } from 'react'
-import { FiEdit } from 'react-icons/fi'
-import { updateArtist } from '../../api/artist'
+import { FiEdit, FiTrash } from 'react-icons/fi'
+import { updateArtist, deleteArtist } from '../../api/artist'
 import { Link } from 'react-router-dom'
+import { deleteArtistFailure, deleteArtistSuccess } from '../shared/AutoDismissAlert/messages'
+import { useNavigate } from 'react-router-dom'
 
 import EditArtistModal from './EditArtistModal'
 
@@ -9,8 +11,32 @@ const Artist = props => {
     const { person, user, msgAlert, triggerRefresh } = props
 
     const [editArtistModalShow, setEditArtistModalShow] = useState(false)
-
+    const navigate = useNavigate()
     console.log(person)
+
+    // the function for deleting artists from the index
+    const removeArtist = () => {
+        //calling api delete func
+        deleteArtist(user, person._id)
+            //sending success message to user
+            .then(() => {
+                msgAlert({
+                    heading: 'Deletion Success',
+                    message: deleteArtistSuccess,
+                    variant: 'success'
+                })
+            })
+            .then(() => navigate('/artists'))
+            .then(triggerRefresh)
+            .catch(() => {
+                msgAlert({
+                    heading: 'Deletion Failed',
+                    message: deleteArtistFailure,
+                    variant: 'danger'
+                })
+            })
+    }
+
 
     return (
         <div>
@@ -19,6 +45,7 @@ const Artist = props => {
                 alt='artist'
             />
             <FiEdit onClick={() => setEditArtistModalShow(true)} />
+            <FiTrash onClick={removeArtist} />
 
             <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p>
 

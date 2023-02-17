@@ -7,6 +7,7 @@ import ArtistForm from '../shared/ArtistForm'
 import { useNavigate } from 'react-router-dom'
 import { Modal } from 'react-bootstrap'
 
+
 const CreateArtistModal = (props) => {
     //getting props we need
     const { user, show, handleClose, msgAlert } = props 
@@ -47,7 +48,7 @@ const CreateArtistModal = (props) => {
 
         createArtist(user, artist)
             //navigate the user to the artist show page
-            .then(res => { navigate(`/artists/`)})
+            .then(res => { navigate(`/artists/${res.data.artist._id}`)})
             //show the user a successful message alert
             .then(() => {
                 msgAlert({
