@@ -47,27 +47,7 @@ const ArtistIndex = props => {
         return <p>Error Ocurred!</p>
     }
 
-    //the function for deleting artists from the index
-    // const removeArtist = () => {
-    //     //calling api delete func
-    //     deleteArtist(user, artist.id)
-    //         //sending success message to user
-    //         .then(() => {
-    //             msgAlert({
-    //                 heading: 'Deletion Success',
-    //                 message: deleteArtistSuccess,
-    //                 variant: 'success'
-    //             })
-    //         })
-    //         .then(() => triggerRefresh())
-    //         .catch(() => {
-    //             msgAlert({
-    //                 heading: 'Deletion Success',
-    //                 message: deleteArtistFailure,
-    //                 variant: 'danger'
-    //             })
-    //         })
-    // }
+    
     //Once api call gets artists, iterate through each one and render this style
 
     
