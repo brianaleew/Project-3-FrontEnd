@@ -69,7 +69,11 @@ const ArtistIndex = props => {
     //         })
     // }
     //Once api call gets artists, iterate through each one and render this style
+
+    const artistDisplays = artistArray.map((person, i) => (
+
     const artistList = artistArray.map((person, i) => (
+
         <Artist
             key={person._id}
             person={person}
@@ -111,7 +115,10 @@ const ArtistIndex = props => {
                 handleClose={() => setCreateArtistModalShow(false)}
                 triggerRefresh={() => setUpdated(prev => !prev)}
             />
+
+
         </div>
+
     )
 }
 

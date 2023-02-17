@@ -28,6 +28,7 @@ const EditArtistModal = props => {
     //     console.log('ARTISTINFO ', artistInfo)
     // }, [])
 
+
     //linking names and values to what is input by users in form
     const onChange = e => {
         setArtistInfo(prevArtist => {
