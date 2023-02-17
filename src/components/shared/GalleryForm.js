@@ -55,28 +55,8 @@ const GalleryForm = (props) => {
                     />  
 
                 </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Check 
-                        label="Is this a curator?"
-                        name="curators"
-                        defaultChecked={ gallery.curators }
-                        onChange={handleChange}
-                    />
+            
 
-                </Form.Group>
-                <Form.Group className="m-2">
-                    <Form.Label>Artworks:</Form.Label>
-                    <Form.Control 
-                        placeholder="Artworks"
-                        name="artwork"
-                        id="artwork"
-                        value={ gallery.artworks }
-                        onChange={handleChange}
-                    />  
-
-
-
-                </Form.Group>
                 <Button className="m-2" type="submit">Submit</Button>
             </Form>
         </Container>
