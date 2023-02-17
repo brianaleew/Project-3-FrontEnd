@@ -1,15 +1,15 @@
+//This Artist component controls how artists are rendered in the artist index and holds the function for deleting artists 
 import { useState } from 'react'
 import { FiEdit, FiTrash } from 'react-icons/fi'
 import { updateArtist, deleteArtist } from '../../api/artist'
 import { Link } from 'react-router-dom'
 import { deleteArtistFailure, deleteArtistSuccess } from '../shared/AutoDismissAlert/messages'
-
-
 import EditArtistModal from './EditArtistModal'
 
 const Artist = props => {
+    //pulling in the props we need
     const { person, user, msgAlert, triggerRefresh } = props
-
+    //setting up initial state for EditModal
     const [editArtistModalShow, setEditArtistModalShow] = useState(false)
 
     // the function for deleting artists from the index

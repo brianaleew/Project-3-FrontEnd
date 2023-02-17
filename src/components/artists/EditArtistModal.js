@@ -3,11 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Modal } from 'react-bootstrap'
 import ArtistForm from '../shared/ArtistForm'
-// import { updateArtist } from '../../api/artist'
-import {
-    updateArtistFailure,
-    updateArtistSuccess,
-} from '../shared/AutoDismissAlert/messages'
+import { updateArtistFailure, updateArtistSuccess } from '../shared/AutoDismissAlert/messages'
 
 const EditArtistModal = props => {
     //all the props we need
@@ -20,16 +16,10 @@ const EditArtistModal = props => {
         msgAlert,
         triggerRefresh,
     } = props
-
+    //setting initial state of artistInfo 
     const [artistInfo, setArtistInfo] = useState(artist)
 
-    // useEffect(() => {
-    //     setArtistInfo(artist)
-    //     console.log('ARTISTINFO ', artistInfo)
-    // }, [])
-
-
-    //linking names and values to what is input by users in form
+    //linking the names and values to what is input by users in the form
     const onChange = e => {
         setArtistInfo(prevArtist => {
             e.preventDefault()
@@ -46,7 +36,7 @@ const EditArtistModal = props => {
             }
         })
     }
-
+    //handling behavior once user submits the editArtistModal
     const onSubmit = e => {
         e.preventDefault()
 
@@ -61,7 +51,7 @@ const EditArtistModal = props => {
                     variant: 'success',
                 })
             })
-            //refreshing
+            //refreshing the page to reflect changes
             .then(() => triggerRefresh())
             //handling error with message to user
             .catch(() => {
@@ -74,6 +64,8 @@ const EditArtistModal = props => {
     }
 
     // console.log('this is artistInfo in the modal', artistInfo._id)
+
+
     return (
         <>
             <Modal

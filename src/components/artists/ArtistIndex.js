@@ -1,30 +1,24 @@
 // This component will serve as an Index of Artists but also give the user the option to edit or delete the artist
-import { useState, useEffect, useRef, useLayoutEffect } from 'react'
-import {
-    getAllArtists,
-    createArtist,
-    updateArtist,
-    deleteArtist,
-} from '../../api/artist'
+import { useState, useEffect } from 'react'
+import { getAllArtists } from '../../api/artist'
 import CreateArtistModal from './CreateArtistModal'
 import Artist from './Artist'
-import {
-    deleteArtistFailure,
-    deleteArtistSuccess,
-    getArtistsFailure,
-} from '../shared/AutoDismissAlert/messages'
-import { FiEdit, FiTrash, FiPlus } from 'react-icons/fi'
+import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
+import { FiPlus } from 'react-icons/fi'
 
 const ArtistIndex = props => {
+    //pulling in props
     const { msgAlert, user } = props
-
+    //setting up initial state array of artists
     const [artistArray, setArtistArray] = useState([])
     const [error, setError] = useState(false)
     const [updated, setUpdated] = useState(false)
     const [createArtistModalShow, setCreateArtistModalShow] = useState(false)
-    console.log('this is updated', updated)
-    //making api call
+    // console.log('this is updated', updated)
+
+   
     useEffect(() => {
+         //making api call for artists
         getAllArtists()
             .then(res => {
                 // console.log('This is artists', res.data.artists)
@@ -42,16 +36,12 @@ const ArtistIndex = props => {
             })
     }, [updated])
 
-    //if there is an error, display the error
+    //if there is an error, display error on page
     if (error) {
         return <p>Error Ocurred!</p>
     }
-
     
-    //Once api call gets artists, iterate through each one and render this style
-
-    
-
+    //Once we have artists from api call, map through the array of artists and apply the  design from the Artist component
     const artistList = artistArray.map((person, i) => (
 
         <Artist
@@ -74,20 +64,6 @@ const ArtistIndex = props => {
 
             <div>{artistList}</div>
 
-            <div>
-                {/* icon btns for edit and delete go here */}
-                {/* making modal buttons
-            edit modal button
-            <Button onClick{() => setEditModalShow(true)}
-            > Edit Artist</Button>
-
-            create modal button
-            <Button onClick{() => setEditModalShow(true)}
-            > Edit Artist</Button>
-            */}
-            </div>
-
-            {/* importing Modals below...may still need some fine tuning */}
             <CreateArtistModal
                 user={user}
                 show={createArtistModalShow}
