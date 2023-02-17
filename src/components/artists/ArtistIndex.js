@@ -5,6 +5,8 @@ import CreateArtistModal from './CreateArtistModal'
 import Artist from './Artist'
 import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 import { FiPlus } from 'react-icons/fi'
+import './Artists.css'
+
 
 const ArtistIndex = props => {
     //pulling in props

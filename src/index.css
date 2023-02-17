@@ -9,12 +9,13 @@
 }
 /* creating variables for tester colors */
 :root {
-    --color-primary: hsl(226°, 4%, 12%); /* a dark gray color */
+    --color-primary: hsl(226°, 4%, 12%); /* a dark gray color used for text */
     --color-secondary: rgba(232, 234, 242, 1); /* a light gray color */
     --color-accent-b: rgba(180, 196, 250, 1); /* a pale blue color */
     --color-accent-bd: rgba(117, 143, 246, 1); /* a darker blue color */
     --color-accent-r: rgba(246, 117, 117, 1); /* a red variation color */
     --color-accent-g: rgba(134, 246, 117, 1); /* a green variation color */
+    --color-form-bg:  rgb(207, 207, 207); /* gray color */
 }
 
 html {
