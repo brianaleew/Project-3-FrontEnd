@@ -5,14 +5,14 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 const EditGallery = (props) => {
 
-    const { user, show, handleClose, updateGallery, msgAlert, triggerRefresh } = props
+    const { gallery, user, show, handleClose, updateGallery, msgAlert, triggerRefresh } = props
 
-    const [gallery, setGalley] = useState(props.gallery)
+    const [galleries, setGalleries] = useState(gallery)
 
     const onChange = (e) => {
         e.persist()
         
-        setGalley(prevGallery => {
+        setGalleries(prevGallery => {
             const updatedName = e.target.name
             let updatedValue = e.target.value
 
@@ -41,15 +41,15 @@ const EditGallery = (props) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        updateGallery(user, gallery)
-          
+        updateGallery(user, galleries)
+     
             .then(() => handleClose())
           
             .then(() => {
                 msgAlert({
-                    heading: 'Oh Yeah!',
+                    heading: 'Gallery Edited!',
                     message: messages.updateGallerySuccess,
-                    variant: 'success'
+                    variant: 'Success'
                 })
             })
             
@@ -58,7 +58,7 @@ const EditGallery = (props) => {
             // if there is an error, tell the user about it
             .catch(() => {
                 msgAlert({
-                    heading: 'Oh No!',
+                    heading: 'Error Editing Gallery!',
                     message: messages.updateGalleryFailure,
                     variant: 'danger'
                 })
@@ -71,7 +71,7 @@ const EditGallery = (props) => {
             <Modal.Header closeButton />
             <Modal.Body>
                 <GalleryForm 
-                    gallery={gallery} 
+                    gallery={galleries} 
                     handleChange={onChange} 
                     handleSubmit={onSubmit} 
                     heading="Update Gallery"

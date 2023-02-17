@@ -32,6 +32,15 @@ const authenticatedOptions = (
 			</Link>
 		</Nav.Item>
 
+		<Nav.Item className='m-2'>
+			<Link to='galleries' style={linkStyle}>
+				Curator Index 
+			</Link>
+		</Nav.Item>
+
+
+
+
 	</>
 )
 
