@@ -8,7 +8,7 @@ const Artist = props => {
     const { person, user, msgAlert, triggerRefresh } = props
 
     const [editArtistModalShow, setEditArtistModalShow] = useState(false)
-
+    console.log(person)
     return (
         <div>
             <img
@@ -16,6 +16,7 @@ const Artist = props => {
                 alt='artist'
             />
             <FiEdit onClick={() => setEditArtistModalShow(true)} />
+            <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p>
             <p>{person.name}</p>
             <p>{person.location}</p>
             <p>{person.website}</p>
