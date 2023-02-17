@@ -10,12 +10,12 @@ import { Modal } from 'react-bootstrap'
 
 const CreateArtistModal = (props) => {
     //getting props we need
-    const { user, person, show, handleClose, msgAlert } = props 
+    const { user, show, handleClose, msgAlert } = props 
 
     //pulling the navigation func 
     const navigate = useNavigate()
     //setting artist initial state
-    const [artistInfo, setArtistInfo] = useState({
+    const [artist, setArtist] = useState({
         name: '',
         description: '',
         location: '',
@@ -27,7 +27,7 @@ const CreateArtistModal = (props) => {
         e.persist()
         
         //setting up how artists will change once values are input
-        setArtistInfo(prevArtist => {
+        setArtist(prevArtist => {
             const updatedName = e.target.name 
             let updatedValue = e.target.value
 
@@ -46,9 +46,9 @@ const CreateArtistModal = (props) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        createArtist(user, artistInfo)
+        createArtist(user, artist)
             //navigate the user to the artist show page
-            .then(res => { navigate(`/artists/${person.id}`)})
+            .then(res => { navigate(`/artists/${res.data.artist._id}`)})
             //show the user a successful message alert
             .then(() => {
                 msgAlert({
@@ -76,7 +76,7 @@ const CreateArtistModal = (props) => {
         <Modal.Body>
             <h1>Hi</h1>
             <ArtistForm
-                artist={artistInfo}
+                artist={artist}
                 handleChange={onChange} 
                 handleSubmit={onSubmit}
                 heading="Add A New Artist"
