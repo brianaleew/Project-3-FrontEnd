@@ -103,4 +103,68 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     justify-content: center;
     gap: 0.5rem;
 }
-/* NavBar */
+/* More Styles (based on Artist Pages) */
+
+/* this button class adds a black border to bootstrap styled buttons (should be using btn-light) */
+.gh-btn {
+    border: 1px solid black;
+}
+
+
+/* Index Pages */
+.index-container {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-form-bg);
+    border: 1px solid black;
+    width: 100%;
+    height: 15rem;
+    margin: 3rem 0;
+    
+    
+    
+}
+.index-container p {
+    font-size: 20px;
+}
+
+.index-head {
+   display: flex;
+   justify-content: space-between;
+   
+}
+.title-container{
+    display: flex;
+   justify-content: space-between;
+   width: 100%;
+   align-items: center;
+   padding-right: 1rem;
+}
+
+.index-img {
+    width: 13rem;
+    margin: 1rem;
+}
+.index-container-info {
+    margin: 1rem 0 0 0;
+    width: 100%;
+}
+
+.index-icons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+   
+}
+
+/* Show Pages */
+
+.show-info {
+    /* all info items */
+    margin: 2rem;
+}
+
+.show-items {
+    /* individual items */
+    padding: .2rem;
+}

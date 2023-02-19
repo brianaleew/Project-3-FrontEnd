@@ -5,7 +5,6 @@ import { updateArtist, deleteArtist } from '../../api/artist'
 import { Link } from 'react-router-dom'
 import { deleteArtistFailure, deleteArtistSuccess } from '../shared/AutoDismissAlert/messages'
 import EditArtistModal from './EditArtistModal'
-import './Artists.css'
 import '../../index.css'
 
 
@@ -46,9 +45,9 @@ const Artist = props => {
 
     return (
         <div className='main'>
-            <div className='artist-index-container'>
+            <div className='index-container'>
                 <div>
-                    <img className='artist-index-img'
+                    <img className='index-img'
                         src={person.img}
                         alt='artist'
                     />
@@ -56,10 +55,10 @@ const Artist = props => {
                 
 
                 {/* <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p> */}
-                <div className='artist-index-container-info' >
+                <div className='index-container-info' >
                     <div className='title-container'>
                     <h2 style={{padding: '2px'}}>{person.name}</h2>
-                    <div className='artist-index-icons'>
+                    <div className='index-icons'>
                 <FiEdit size='1.5rem' onClick={() => setEditArtistModalShow(true)} />
                 <FiTrash size='1.5rem' onClick={removeArtist} />
                     </div>
