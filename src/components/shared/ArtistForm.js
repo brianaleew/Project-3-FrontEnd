@@ -54,7 +54,7 @@ const ArtistForm = (props) => {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>description</Form.Label>
-                    <Form.Control
+                    <Form.Control as="textarea" rows="10" aria-label="With textarea"
                         placeholder="Tell us about the Artist"
                         name="description"
                         id="description"

@@ -1,6 +1,12 @@
 /* Styling for all Artists Pages */
 
-/* Artist Index */
+.artist-btn {
+    color: beige;
+    border: 1px solid black;
+}
+
+
+/* Artist Index Page */
 .artist-index-container {
     display: flex;
     flex-direction: row;
@@ -35,23 +41,19 @@
     align-self: flex-start;
 }
 
-.artist-btn {
-    color: beige;
-    border: 1px solid black;
+/* Artist Show Page */
+
+.artist-show-info {
+    /* all info items */
+    margin: 2rem;
 }
 
-/* Media Queries */
+.artist-show-items {
+    /* individual items */
+    padding: .2rem;
+}
 
 
 
-/* //styling 
-// const artistIndexContainer = {
-//     width: '30rem',
-//     height: '15rem',
-//     margin: '5rem 1.5rem',
-//     display: 'flex',
-//     backgroundColor: 'var(--color-form-bg)'
-// }
-// const artistIndexImg = {
-//     float: 'left'
-// } */
+
+
