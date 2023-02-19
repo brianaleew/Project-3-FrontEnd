@@ -7,8 +7,14 @@ export const getAllGalleries = () => {
     return axios(`${apiUrl}/galleries`)
 }
 
-export const getMyGalleries = id => {
-    return axios(`${apiUrl}/galleries-mine/${id}`)
+export const getMyGalleries = user => {
+    return axios({
+        url: `${apiUrl}/galleries-mine`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`,
+        },
+    })
 }
 // READ -> Show
 export const getOneGallery = id => {
