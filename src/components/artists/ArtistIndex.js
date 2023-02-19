@@ -5,7 +5,7 @@ import CreateArtistModal from './CreateArtistModal'
 import Artist from './Artist'
 import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 import { FiPlus } from 'react-icons/fi'
-import './Artists.css'
+import '../../index.css'
 
 
 const ArtistIndex = props => {
@@ -59,8 +59,8 @@ const ArtistIndex = props => {
 
 
     return (
-        <div className='main'>
-            <div className='artist-index-head'>
+        <div className='main gh-main-container'>
+            <div className='index-head'>
                 <h3>Total Artists: {artistTotal} </h3>
                 <FiPlus size='2rem' onClick={() => setCreateArtistModalShow(true)} />
             </div>
