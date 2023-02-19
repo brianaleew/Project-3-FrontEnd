@@ -57,16 +57,20 @@ const Artist = props => {
 
                 {/* <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p> */}
                 <div className='artist-index-container-info' >
+                    <div className='title-container'>
                     <h2 style={{padding: '2px'}}>{person.name}</h2>
+                    <div className='artist-index-icons'>
+                <FiEdit size='1.5rem' onClick={() => setEditArtistModalShow(true)} />
+                <FiTrash size='1.5rem' onClick={removeArtist} />
+                    </div>
+                </div>
+
                     <p style={{padding: '2px'}}>{person.location}</p>
                     <a  style={{padding: '2px'}}src={person.website}>{person.website}</a>
                    <div><Link to={`/artists/${person._id}`} className='btn btn-light' style={{border: '1px solid black', margin: '8px'}}>Show Artist</Link></div> 
                 </div>
 
-                <div className='artist-index-icons'>
-                <FiEdit size='1.5rem' onClick={() => setEditArtistModalShow(true)} value={{ className: 'artist-index-icons' }} />
-                <FiTrash size='1.5rem' onClick={removeArtist} value={{ className: 'artist-index-icons' }} />
-                </div>
+                
 
 
 

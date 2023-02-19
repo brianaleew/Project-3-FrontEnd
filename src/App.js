@@ -110,10 +110,12 @@ const App = () => {
                 <Route
                     path='/galleries/:id'
                     element={
+                        <RequireAuth user={user}>
                         <ShowGallery
                             user={user}
                             msgAlert={msgAlert}
                         />
+                        </RequireAuth>
                     }
                 />
                 <Route
