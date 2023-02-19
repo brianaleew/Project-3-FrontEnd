@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getOneArtist } from '../../api/artist'
 import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 
-const ShowArtist = (props) => {
+const ShowArtist = props => {
     //pulling in props
     const { msgAlert } = props
     //setting initial state for artistInfo
@@ -22,29 +22,28 @@ const ShowArtist = (props) => {
                 msgAlert({
                     heading: 'Error Getting Artist',
                     message: getArtistsFailure,
-                    variant: 'danger'
+                    variant: 'danger',
                 })
-            }) 
+            })
     }, [])
 
     console.log('this is artist info', artistInfo)
 
-
-    return(
+    return (
         <>
-        <div>
-            <img src={artistInfo.img}  alt='A picture of the artist' />
-        </div>
+            <div>
+                <img
+                    src={artistInfo.img}
+                    alt='A picture of the artist'
+                />
+            </div>
 
-        <div>
-            <h3>{artistInfo.name}</h3>
-            <h4>{artistInfo.location}</h4>
-            <h4>{artistInfo.website}</h4>
-            <p>{artistInfo.description}</p>
-        </div>
-        
-        
-        
+            <div>
+                <h3>{artistInfo.name}</h3>
+                <h4>{artistInfo.location}</h4>
+                <h4>{artistInfo.website}</h4>
+                <p>{artistInfo.description}</p>
+            </div>
         </>
     )
 }

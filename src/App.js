@@ -14,21 +14,18 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowGallery from './components/galleries/ShowGallery'
-import CreateGalleryModal from './components/galleries/CreateGalleryModal'
 import ArtistIndex from './components/artists/ArtistIndex'
 import ShowArtist from './components/artists/ShowArtist'
-
-
-
+import CuratorIndex from './components/galleries/CuratorIndex'
 
 const App = () => {
     const [user, setUser] = useState(null)
     const [msgAlerts, setMsgAlerts] = useState([])
 
-    console.log('user in app', user)
-    console.log('message alerts', msgAlerts)
+    // console.log('user in app', user)
+    // console.log('message alerts', msgAlerts)
     const clearUser = () => {
-        console.log('clear user ran')
+        // console.log('clear user ran')
         setUser(null)
     }
 
@@ -99,21 +96,19 @@ const App = () => {
                         </RequireAuth>
                     }
                 />
-
-                {/* <Route
-                    path='/create-gallery'
+                <Route
+                    path='/galleries-mine'
                     element={
                         <RequireAuth user={user}>
-                            <CreateGalleryModal
-                                msgAlert={msgAlert}
+                            <CuratorIndex
                                 user={user}
+                                msgAlert={msgAlert}
                             />
                         </RequireAuth>
                     }
-                /> */}
-                
+                />
                 <Route
-                    path='galleries/:id'
+                    path='/galleries/:id'
                     element={
                         <ShowGallery
                             user={user}
@@ -135,16 +130,12 @@ const App = () => {
                 <Route
                     path='/artists/:id'
                     element={
-                            <ShowArtist
-                                msgAlert={msgAlert}
-                                user={user}
-                            />
+                        <ShowArtist
+                            msgAlert={msgAlert}
+                            user={user}
+                        />
                     }
                 />
-
-
-
-
             </Routes>
             {msgAlerts.map(msgAlert => (
                 <AutoDismissAlert

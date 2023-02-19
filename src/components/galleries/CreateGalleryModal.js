@@ -6,20 +6,23 @@
 // on failure: component should send the message and remain visible
 import { useState } from 'react'
 import { createGallery } from '../../api/gallery'
-import { createGallerySuccess, createGalleryFailure } from '../shared/AutoDismissAlert/messages'
+import {
+    createGallerySuccess,
+    createGalleryFailure,
+} from '../shared/AutoDismissAlert/messages'
 import GalleryForm from '../shared/GalleryForm'
 import { Modal } from 'react-bootstrap'
 
 // bring in the useNavigate hook from react-router-dom
 import { useNavigate } from 'react-router-dom'
 
-const CreateGalleryModal = (props) => {
+const CreateGalleryModal = props => {
     // pull out our props
     const { user, msgAlert, show, handleClose } = props
 
     // set up(pull our navigate function from useNavigate)
     const navigate = useNavigate()
-    console.log('this is navigate', navigate)
+    // console.log('this is navigate', navigate)
 
     const [gallery, setGallery] = useState({
         name: '',
@@ -30,14 +33,14 @@ const CreateGalleryModal = (props) => {
         artworks: [],
     })
 
-    const onChange = (e) => {
+    const onChange = e => {
         e.persist()
-        
+
         setGallery(prevGallery => {
             const updatedName = e.target.name
             let updatedValue = e.target.value
 
-            console.log('this is the input type', e.target.type)
+            // console.log('this is the input type', e.target.type)
 
             // to handle a number, we look at the type, and parse a string to an integer
             if (e.target.type === 'string') {
@@ -50,31 +53,34 @@ const CreateGalleryModal = (props) => {
             } else if (updatedName === 'curator' && !e.target.checked) {
                 updatedValue = false
             }
-            
+
             const updatedGallery = {
-                [updatedName] : updatedValue
+                [updatedName]: updatedValue,
             }
-            
+
             console.log('the gallery', updatedGallery)
 
             return {
-                ...prevGallery, ...updatedGallery
+                ...prevGallery,
+                ...updatedGallery,
             }
         })
     }
 
-    const onSubmit = (e) => {
+    const onSubmit = e => {
         e.preventDefault()
 
         createGallery(user, gallery)
             // first we'll nav to the show page
-            .then(res => { navigate(`/gallerys/${res.data.gallery.id}`)})
+            .then(res => {
+                navigate(`/gallerys/${res.data.gallery.id}`)
+            })
             // we'll also send a success message
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
                     message: createGallerySuccess,
-                    variant: 'success'
+                    variant: 'success',
                 })
             })
             // if there is an error, tell the user about it
@@ -82,22 +88,24 @@ const CreateGalleryModal = (props) => {
                 msgAlert({
                     heading: 'Oh No!',
                     message: createGalleryFailure,
-                    variant: 'danger'
+                    variant: 'danger',
                 })
             })
-
     }
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal
+            show={show}
+            onHide={handleClose}
+        >
             <Modal.Header closeButton />
             <Modal.Body>
-        <GalleryForm 
-            gallery={gallery}
-            handleChange={onChange}
-            handleSubmit={onSubmit}
-            heading="Add a new gallery!"
-        />
+                <GalleryForm
+                    gallery={gallery}
+                    handleChange={onChange}
+                    handleSubmit={onSubmit}
+                    heading='Add a new gallery!'
+                />
             </Modal.Body>
         </Modal>
     )

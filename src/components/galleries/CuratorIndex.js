@@ -1,10 +1,10 @@
 // This component will serve as an Index of Artists but also give the user the option to edit or delete the artist
-import { useState, useEffect} from 'react'
-import { getAllGalleries,} from '../../api/gallery'
-import CreateGalleryModal from './CreateArtistModal'
+import { useState, useEffect } from 'react'
+import { getMyGalleries } from '../../api/gallery'
+import CreateGalleryModal from './CreateGalleryModal'
 import Gallery from './Gallery'
-import {message} from '../shared/AutoDismissAlert/messages'
-import {FiPlus } from 'react-icons/fi'
+import messages from '../shared/AutoDismissAlert/messages'
+import { FiPlus } from 'react-icons/fi'
 
 const CuratorIndex = props => {
     const { msgAlert, user } = props
@@ -16,8 +16,9 @@ const CuratorIndex = props => {
 
     //making api call
     useEffect(() => {
-        getAllGalleries()
+        getMyGalleries(user)
             .then(res => {
+                console.log(res)
                 setGalleryArray(res.data.galleries)
             })
 
@@ -25,7 +26,7 @@ const CuratorIndex = props => {
             .catch(err => {
                 msgAlert({
                     heading: 'Error!',
-                    message: message.getArtistsFailure,
+                    message: messages.getMyGalleriesFailure,
                     variant: 'danger',
                 })
                 setError(true)
@@ -37,18 +38,15 @@ const CuratorIndex = props => {
         return <p>Error Ocurred!</p>
     }
 
-
-    const GalleryList = galleryArray.map((person, i) => (
-
+    const GalleryList = galleryArray.map((gal, i) => (
         <Gallery
-            key={person._id}
-            person={person}
+            key={gal._id}
+            gallery={gal}
             user={user}
             msgAlert={msgAlert}
             triggerRefresh={() => setUpdated(prev => !prev)}
         />
     ))
-
 
     return (
         <div className='main'>
@@ -59,7 +57,6 @@ const CuratorIndex = props => {
 
             <div>{GalleryList}</div>
 
-
             <CreateGalleryModal
                 user={user}
                 show={createGalleryModalShow}
@@ -67,10 +64,7 @@ const CuratorIndex = props => {
                 handleClose={() => setCreateGalleryModalShow(false)}
                 triggerRefresh={() => setUpdated(prev => !prev)}
             />
-
-
         </div>
-
     )
 }
 
