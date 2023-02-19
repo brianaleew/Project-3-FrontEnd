@@ -5,6 +5,7 @@ import CreateGalleryModal from './CreateGalleryModal'
 import Gallery from './Gallery'
 import messages from '../shared/AutoDismissAlert/messages'
 import { FiPlus } from 'react-icons/fi'
+import '../../index.css'
 
 const CuratorIndex = props => {
     const { msgAlert, user } = props
@@ -48,11 +49,14 @@ const CuratorIndex = props => {
         />
     ))
 
+    // A counter for the number of galleries
+    let galleryTotal = galleryArray.length
+
     return (
-        <div className='main'>
-            <div>
-                <h3>Total Galleries: </h3>
-                <FiPlus onClick={() => setCreateGalleryModalShow(true)} />
+        <div className='main gh-main-container'>
+            <div className='index-head'>
+                <h3>Total Galleries: {galleryTotal} </h3>
+                <FiPlus size='2rem' onClick={() => setCreateGalleryModalShow(true)} />
             </div>
 
             <div>{GalleryList}</div>
