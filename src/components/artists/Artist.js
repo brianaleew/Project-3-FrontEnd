@@ -57,10 +57,10 @@ const Artist = props => {
 
                 {/* <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p> */}
                 <div className='artist-index-container-info' >
-                    <h2>{person.name}</h2>
-                    <p>{person.location}</p>
-                    <a src={person.website}>Artist Portfolio Website</a>
-                    <Link to={`/artists/${person._id}`} className='btn btn-primary'>Show Artist</Link>
+                    <h2 style={{padding: '2px'}}>{person.name}</h2>
+                    <p style={{padding: '2px'}}>{person.location}</p>
+                    <a  style={{padding: '2px'}}src={person.website}>{person.website}</a>
+                   <div><Link to={`/artists/${person._id}`} className='btn btn-light' style={{border: '1px solid black', margin: '8px'}}>Show Artist</Link></div> 
                 </div>
 
                 <div className='artist-index-icons'>

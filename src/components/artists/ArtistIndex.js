@@ -54,14 +54,17 @@ const ArtistIndex = props => {
             triggerRefresh={() => setUpdated(prev => !prev)}
         />
     ))
-
     // console.log('This is the artist array', artistArray)
+
+    //Counter for Artists
+     let artistTotal = artistArray.length 
+
 
     return (
         <div className='main'>
-            <div>
-                <h3>Total Artists: </h3>
-                <FiPlus onClick={() => setCreateArtistModalShow(true)} />
+            <div className='artist-index-head'>
+                <h3>Total Artists: {artistTotal} </h3>
+                <FiPlus size='2rem' onClick={() => setCreateArtistModalShow(true)} />
             </div>
 
             <div>{artistList}</div>
