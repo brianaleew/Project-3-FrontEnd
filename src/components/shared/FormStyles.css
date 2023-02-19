@@ -1,10 +1,15 @@
 .form-styles__container {
-    margin: 5rem auto; 
+    margin: 1.5rem auto; 
     width: min(480px, 88%);
 }
 
 .form-styles__form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.artist-form-input-box {
+    border: 1px solid black;
 }

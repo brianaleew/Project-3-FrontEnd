@@ -69,7 +69,7 @@ const CreateArtistModal = (props) => {
     <Modal show={show} onHide={handleClose}>
 
         <Modal.Body>
-            <h1>Hi</h1>
+            
             <ArtistForm
                 artist={artist}
                 handleChange={onChange} 

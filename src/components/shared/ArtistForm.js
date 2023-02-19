@@ -7,12 +7,12 @@ const ArtistForm = (props) => {
     const { artist, handleChange, handleSubmit, heading } = props 
 
     return ( 
-        <Container>
+        <Container className='form-styles__container'>
             <h3> {heading} </h3> 
             {/* setting up the form */}
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className='form-styles__form'>
                 <Form.Group> 
-                    <Form.Label>Artist Name:</Form.Label>
+                    <Form.Label>artist name:</Form.Label>
                     <Form.Control
                         placeholder="Type the Artist's Name Here"
                         name="name"
@@ -22,17 +22,7 @@ const ArtistForm = (props) => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Description</Form.Label>
-                    <Form.Control
-                        placeholder="Tell us about the Artist"
-                        name="description"
-                        id="description"
-                        value={artist.description}
-                        onChange={handleChange}
-                        />    
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Location</Form.Label>
+                    <Form.Label>location</Form.Label>
                     <Form.Control
                         placeholder="Where is the Artist located or from (if deceased)?"
                         name="location"
@@ -42,7 +32,7 @@ const ArtistForm = (props) => {
                         />    
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Website</Form.Label>
+                    <Form.Label>website</Form.Label>
                     <Form.Control
                         placeholder="Place a link to the Artist's portfolio here"
                         name="website"
@@ -52,8 +42,9 @@ const ArtistForm = (props) => {
                         />    
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Artist Image</Form.Label>
+                    <Form.Label>artist image (url)</Form.Label>
                     <Form.Control
+                        className='artist-form-input-box'
                         placeholder="Place the image link to your artist picture here"
                         name="img"
                         id="img"
@@ -61,7 +52,17 @@ const ArtistForm = (props) => {
                         onChange={handleChange}
                         />    
                 </Form.Group>
-                <Button type="submit">Submit</Button>
+                <Form.Group>
+                    <Form.Label>description</Form.Label>
+                    <Form.Control
+                        placeholder="Tell us about the Artist"
+                        name="description"
+                        id="description"
+                        value={artist.description}
+                        onChange={handleChange}
+                        />    
+                </Form.Group>
+                <Button type="submit" className='btn-light' style={{border: '1px solid black', width: '15em', alignSelf: 'center'}}>Submit</Button>
             </Form>
         </Container>
     )
