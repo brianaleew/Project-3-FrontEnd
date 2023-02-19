@@ -6,7 +6,7 @@ import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
 import './Artists.css'
 import '../../index.css'
 
-const ShowArtist = (props) => {
+const ShowArtist = props => {
     //pulling in props
     const { msgAlert } = props
     //setting initial state for artistInfo
@@ -24,15 +24,14 @@ const ShowArtist = (props) => {
                 msgAlert({
                     heading: 'Error Getting Artist',
                     message: getArtistsFailure,
-                    variant: 'danger'
+                    variant: 'danger',
                 })
-            }) 
+            })
     }, [])
 
     console.log('this is artist info', artistInfo)
 
-
-    return(
+return(
         <div className='gh-flex-clm-c'>
         <div>
             <img style={{width: '100%'}} src={artistInfo.img}  alt='A picture of the artist' />

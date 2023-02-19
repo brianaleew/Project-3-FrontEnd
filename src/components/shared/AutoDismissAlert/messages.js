@@ -15,6 +15,8 @@ const messages = {
     updateGalleryFailure: 'Failed to update gallery, please try again',
     removeGallerySuccess: 'This gallery has been removed!',
     removeGalleryFailure: 'Something went wrong, please try again',
+    getMyGalleriesSuccess: 'All of your galleries have been found, Here ya go!',
+    getMyGalleriesFailure: 'Trrouble finding your galleries. Try Again',
     createArtistSuccess: 'You have successfully added an Artist!',
     createArtistFailure: 'Oops! Failed to create an Artist. Please Try Again',
     updateArtistSuccess: 'You have successfully updated the Artist',

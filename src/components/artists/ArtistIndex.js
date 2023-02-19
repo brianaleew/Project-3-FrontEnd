@@ -18,9 +18,8 @@ const ArtistIndex = props => {
     const [createArtistModalShow, setCreateArtistModalShow] = useState(false)
     // console.log('this is updated', updated)
 
-   
     useEffect(() => {
-         //making api call for artists
+        //making api call for artists
         getAllArtists()
             .then(res => {
                 // console.log('This is artists', res.data.artists)
@@ -42,10 +41,9 @@ const ArtistIndex = props => {
     if (error) {
         return <p>Error Ocurred!</p>
     }
-    
+
     //Once we have artists from api call, map through the array of artists and apply the  design from the Artist component
     const artistList = artistArray.map((person, i) => (
-
         <Artist
             key={person._id}
             person={person}
@@ -76,10 +74,7 @@ const ArtistIndex = props => {
                 handleClose={() => setCreateArtistModalShow(false)}
                 triggerRefresh={() => setUpdated(prev => !prev)}
             />
-
-
         </div>
-
     )
 }
 
