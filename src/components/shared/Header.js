@@ -93,12 +93,14 @@ const curatorOptions = (
                 to='/galleries-mine'
                 style={linkStyle}
             >
-                Home
+                Curator Hub 
             </Link>
         </Nav.Item>
 )
 
-const Header = ({ user }) => (
+const Header = ({ user }) => {
+    console.log('this is user', user)
+    return(
     <Navbar
         bg='light'
         variant='light'
@@ -130,15 +132,18 @@ const Header = ({ user }) => (
                 )}
                 {alwaysOptions}
                 {user ? authenticatedOptions : unauthenticatedOptions}
-                {/* {user.isCurator ? curatorOptions : authenticatedOptions} */}
-                {user.isCurator && (
+
+                {user && user.isCurator ? curatorOptions : null}
+
+
+                {/* {user.isCurator && 
                     curatorOptions
-                )}
+                ) */}
                 
                 
             </Nav>
         </Navbar.Collapse>
-    </Navbar>
-)
+    </Navbar>)
+}
 
 export default Header
