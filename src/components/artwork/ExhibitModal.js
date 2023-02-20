@@ -5,31 +5,48 @@
 // and reappear when the screen is clicked/touched if possible.
 // The artwork's info will be contained in a drawed that can be opened from
 // the bottom of the screen.
-
-import { FiChevronLeft, FiChevronRight, FiChevronUp, FiX } from 'react-icons/fi'
-
+import { useState, useEffect } from 'react'
+import { getAllArtwork } from '../../api/artist'
+import ExhibitArt from './ExhibitArt'
+import messages from '../shared/AutoDismissAlert/messages'
 const ExhibitModal = props => {
-    const { artPiece } = props
+    const { msgAlert, user } = props
 
-    return (
-        <div className='exhibit'>
-            <div className='exhibit-art-display'>
-                <img
-                    src={artPiece.image}
-                    alt=''
-                />
-            </div>
-            <div className='exhibit-ui'>
-                <h4 className='exhibit-ui__title'>{artPiece.title}</h4>
-                <p className='exhibit-ui__artist'>{artPiece.artist.name}</p>
-                {/* icons needed : return to gallery, left, right, up to open drawer */}
-                <FiX />
-                <FiChevronLeft />
-                <FiChevronRight />
-                <FiChevronUp />
-            </div>
-        </div>
-    )
+    const [artworkArray, setArtworkArray] = useState([])
+    const [error, setError] = useState(false)
+
+    useEffect(() => {
+        getAllArtwork()
+            .then(res => {
+                // console.log('This is artists', res.data.artists)
+                setArtworkArray(res.data.artwork)
+            })
+
+            //handle errors by sending user an error message
+            .catch(err => {
+                msgAlert({
+                    heading: 'Error!',
+                    message: 'Artwork fail!',
+                    variant: 'danger',
+                })
+                setError(true)
+            })
+    }, [])
+
+    if (error) {
+        return <p>Error Ocurred!</p>
+    }
+
+    const artworkList = artworkArray.map((artPiece, i) => (
+        <ExhibitArt
+            key={artPiece._id}
+            artPiece={artPiece}
+            user={user}
+            msgAlert={msgAlert}
+        />
+    ))
+
+    return <div className='exhibit gh-media-scroller'>{artworkList}</div>
 }
 
 export default ExhibitModal

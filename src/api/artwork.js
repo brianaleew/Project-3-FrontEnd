@@ -8,6 +8,17 @@ export const getAllArtwork = galleryId => {
     return axios(`${apiUrl}/artworks/${galleryId}`)
 }
 
+// SHOW
+export const getOneArtwork = (galleryId, artworkId, user) => {
+    return axios({
+        url: `${apiUrl}/artworks/${galleryId}/${artworkId}`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`,
+        },
+    })
+}
+
 // CREATE
 export const createArtwork = (user, galleryId, newArtwork) => {
     return axios({

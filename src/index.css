@@ -9,13 +9,13 @@
 }
 /* creating variables for tester colors */
 :root {
-    --color-primary: hsl(226°, 4%, 12%); /* a dark gray color used for text */
+    --color-primary: hsl(226, 4%, 12%); /* a dark gray color used for text */
     --color-secondary: rgba(232, 234, 242, 1); /* a light gray color */
     --color-accent-b: rgba(180, 196, 250, 1); /* a pale blue color */
     --color-accent-bd: rgba(117, 143, 246, 1); /* a darker blue color */
     --color-accent-r: rgba(246, 117, 117, 1); /* a red variation color */
     --color-accent-g: rgba(134, 246, 117, 1); /* a green variation color */
-    --color-form-bg:  rgb(207, 207, 207); /* gray color */
+    --color-form-bg: rgb(207, 207, 207); /* gray color */
 }
 
 html {
@@ -110,7 +110,6 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     border: 1px solid black;
 }
 
-
 /* Index Pages */
 .index-container {
     display: flex;
@@ -120,25 +119,21 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
     width: 100%;
     height: 15rem;
     margin: 3rem 0;
-    
-    
-    
 }
 .index-container p {
     font-size: 20px;
 }
 
 .index-head {
-   display: flex;
-   justify-content: space-between;
-   
-}
-.title-container{
     display: flex;
-   justify-content: space-between;
-   width: 100%;
-   align-items: center;
-   padding-right: 1rem;
+    justify-content: space-between;
+}
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-right: 1rem;
 }
 
 .index-img {
@@ -153,8 +148,7 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
 .index-icons {
     display: flex;
     align-items: center;
-    gap: .5rem;
-   
+    gap: 0.5rem;
 }
 
 /* Show Pages */
@@ -166,5 +160,5 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
 
 .show-items {
     /* individual items */
-    padding: .2rem;
+    padding: 0.2rem;
 }
