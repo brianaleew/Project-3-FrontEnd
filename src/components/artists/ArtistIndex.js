@@ -62,7 +62,11 @@ const ArtistIndex = props => {
         <div className='main gh-main-container'>
             <div className='index-head'>
                 <h3>Total Artists: {artistTotal} </h3>
-                <FiPlus size='2rem' onClick={() => setCreateArtistModalShow(true)} />
+               
+                <span style={{display: 'flex'}}>
+                    <h5 style={{padding: '0 1rem 0 0'}}>Add New</h5>
+                    <FiPlus size='2rem' onClick={() => setCreateArtistModalShow(true)} />
+                </span>
             </div>
 
             <div>{artistList}</div>

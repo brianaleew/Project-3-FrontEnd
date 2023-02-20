@@ -25,31 +25,7 @@ const authenticatedOptions = (
                 Sign Out
             </Link>
         </Nav.Item>
-        <Nav.Item className='m-2'>
-            <Link
-                to='artists'
-                style={linkStyle}
-            >
-                Artist Index
-            </Link>
-        </Nav.Item>
-        <Nav.Item className='m-2'>
-            <Link
-                to='artists/:id'
-                style={linkStyle}
-            >
-                Artist Show
-            </Link>
-        </Nav.Item>
-{/* 
-        <Nav.Item className='m-2'>
-            <Link
-                to='galleries-mine'
-                style={linkStyle}
-            >
-                Curator Index
-            </Link>
-        </Nav.Item> */}
+
     </>
 )
 
@@ -71,6 +47,8 @@ const unauthenticatedOptions = (
                 Sign In
             </Link>
         </Nav.Item>
+
+        
     </>
 )
 
@@ -84,18 +62,30 @@ const alwaysOptions = (
                 Home
             </Link>
         </Nav.Item>
+        
     </>
 )
 
 const curatorOptions = (
+    <>
     <Nav.Item className='m-2'>
             <Link
                 to='/galleries-mine'
                 style={linkStyle}
             >
-                Curator Hub 
+            Manage Galleries  
             </Link>
         </Nav.Item>
+        <Nav.Item className='m-2'>
+            <Link
+                to='artists'
+                style={linkStyle}
+            >
+                Artist Profiles
+            </Link>
+        </Nav.Item>
+
+     </>    
 )
 
 const Header = ({ user }) => {
@@ -126,7 +116,7 @@ const Header = ({ user }) => {
             
             <Nav className='ml-auto'>
                 {user && (
-                    <span className='navbar-text mr-2'>
+                    <span className='navbar-text mr-2' style={{fontFamily: 'Exo, sans serif'}}>
                         Welcome, {user.email}
                     </span>
                 )}
