@@ -25,6 +25,10 @@ const messages = {
     getArtistsFailure: 'There was a problem getting the Artist(s). Try Again',
     deleteArtistSuccess: 'You have successfully deleted the Artist',
     deleteArtistFailure: 'Failed to delete Artist, please try again.',
+    createArtworkSuccess: '*Chef`s Kiss*',
+    createArtworkFailure: 'Oops! Failed to create artwork. Please Try Again',
+    deleteArtworkFailure: 'Sacre bleu!!! You have destroyed some artwork!!',
+    deleteArtworkSuccess: 'Failed to delete Artwork please try again.',
 }
 
 module.exports = messages

@@ -1,0 +1,17 @@
+.gh-media-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+}
+
+.gh-media-scroller > * {
+    scroll-snap-align: start;
+}
+
+.exhibit-art {
+    width: 100%;
+    background-color: black;
+}

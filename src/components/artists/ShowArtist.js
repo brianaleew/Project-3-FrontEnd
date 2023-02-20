@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getOneArtist } from '../../api/artist'
 import { getArtistsFailure } from '../shared/AutoDismissAlert/messages'
-import '../../index.css' 
+import '../../index.css'
 
 const ShowArtist = props => {
     //pulling in props
@@ -30,21 +30,22 @@ const ShowArtist = props => {
 
     console.log('this is artist info', artistInfo)
 
-return(
+    return (
         <div className='gh-flex-clm-c'>
-        <div>
-            <img style={{width: '100%'}} src={artistInfo.img}  alt='A picture of the artist' />
-        </div>
+            <div>
+                <img
+                    style={{ width: '100%' }}
+                    src={artistInfo.img}
+                    alt='A picture of the artist'
+                />
+            </div>
 
-        <div className='show-info'>
-            <h3 className='show-items'>{artistInfo.name}</h3>
-            <h5 className='show-items'>{artistInfo.location}</h5>
-            <h5 className='show-items'>{artistInfo.website}</h5>
-            <p className='show-items'>{artistInfo.description}</p>
-        </div>
-        
-        
-        
+            <div className='show-info'>
+                <h3 className='show-items'>{artistInfo.name}</h3>
+                <h5 className='show-items'>{artistInfo.location}</h5>
+                <h5 className='show-items'>{artistInfo.website}</h5>
+                <p className='show-items'>{artistInfo.description}</p>
+            </div>
         </div>
     )
 }
