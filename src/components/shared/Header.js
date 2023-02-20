@@ -41,7 +41,7 @@ const authenticatedOptions = (
                 Artist Show
             </Link>
         </Nav.Item>
-
+{/* 
         <Nav.Item className='m-2'>
             <Link
                 to='galleries-mine'
@@ -49,7 +49,7 @@ const authenticatedOptions = (
             >
                 Curator Index
             </Link>
-        </Nav.Item>
+        </Nav.Item> */}
     </>
 )
 
@@ -87,6 +87,17 @@ const alwaysOptions = (
     </>
 )
 
+const curatorOptions = (
+    <Nav.Item className='m-2'>
+            <Link
+                to='/galleries-mine'
+                style={linkStyle}
+            >
+                Home
+            </Link>
+        </Nav.Item>
+)
+
 const Header = ({ user }) => (
     <Navbar
         bg='light'
@@ -110,6 +121,7 @@ const Header = ({ user }) => (
             style={dropdownNav}
             className='m-2 nav justify-content-end bg-muted'
         >
+            
             <Nav className='ml-auto'>
                 {user && (
                     <span className='navbar-text mr-2'>
@@ -118,6 +130,12 @@ const Header = ({ user }) => (
                 )}
                 {alwaysOptions}
                 {user ? authenticatedOptions : unauthenticatedOptions}
+                {/* {user.isCurator ? curatorOptions : authenticatedOptions} */}
+                {user.isCurator && (
+                    curatorOptions
+                )}
+                
+                
             </Nav>
         </Navbar.Collapse>
     </Navbar>
