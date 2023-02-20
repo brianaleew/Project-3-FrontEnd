@@ -28,14 +28,21 @@ const GalleryIndex = props => {
     // console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
         <li key={gallery._id}>
+
             <Link to = {`/galleries/${gallery._id}`}>
-            <p>{gallery.name}</p>
+
+
+            <div>
+                <p className='galleryName'>{gallery.name}</p>
+            </div>
+
             <img
                 className='gallery-index__gallery-image'
                 src={'/art-gallery.jpg'}
                 alt='hero'
             />
-
+            
+           
             </Link>
         </li>
     ))
@@ -56,19 +63,20 @@ const GalleryIndex = props => {
                             // color='white'
                             size='5rem'
                         />
-                        <p>explore</p>
+                        <p>Explore</p>
                     </div>
                     <div className='gh-flex-clm-c'>
                         <FiImage
                             // color='white'
                             size='5rem'
                         />
-                        <p>curate</p>
+                        <p>Curate</p>
                     </div>
                 </div>
             </div>
+
             <div className='gh-main-container'>
-                <p>recommended galleries</p>
+                <p className='recommended'>Recommended Galleries</p>
                 <ul className='gh-grid-400'>{galleryArray}</ul>
             </div>
         </div>

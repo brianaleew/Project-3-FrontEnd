@@ -98,7 +98,7 @@ const Header = ({ user }) => (
                 to='/'
                 style={linkStyle}
             >
-                galleryhub
+                <h3 style={{paddingLeft:"10px" }}>Gallery Hub</h3>
             </Link>
         </Navbar.Brand>
         <Navbar.Toggle
