@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { FiEdit } from 'react-icons/fi'
-import { updateGallery } from '../../api/gallery'
+import { FiEdit, FiTrash} from 'react-icons/fi'
+import { updateGallery, removeGallery} from '../../api/gallery'
 import { Link } from 'react-router-dom'
 import '../../index.css'
-
+import { removeGalleryFailure, removeGallerySuccess } from '../shared/AutoDismissAlert/messages'
 import EditGalleryModal from './EditGalleryModal'
 
 const Gallery = props => {
@@ -11,7 +11,30 @@ const Gallery = props => {
 
     const [editGalleryModalShow, setEditGalleryModalShow] = useState(false)
 
-    console.log(gallery)
+    // console.log(gallery)
+
+    // the function for deleting galleries from the Curator index
+    const deleteGallery = () => {
+        //calling api delete func
+        removeGallery(user, gallery._id)
+            .then(() => triggerRefresh())
+            //sending success message to user
+            .then(() => {
+                msgAlert({
+                    heading: 'Deletion Success',
+                    message: removeGallerySuccess,
+                    variant: 'success'
+                })
+            })
+            .catch(() => {
+                msgAlert({
+                    heading: 'Deletion Failed',
+                    message: removeGalleryFailure,
+                    variant: 'danger'
+                })
+            })
+    }
+
 
     return (
         <div className='main'>
@@ -30,7 +53,9 @@ const Gallery = props => {
                         <h2 style={{padding: '2px'}}>{gallery.name}</h2>
                         <div className='index-icons'>
                             <FiEdit  size='1.5rem'  onClick={() => setEditGalleryModalShow(true)} />
-                            {/* <FiTrash size='1.5rem' onClick={insert gallery delete func here} /> */}
+                            {/* <FiTrash size='1.5rem' onClick={inserted the gallery delete function here} /> */}
+                            <FiTrash size='1.5rem' onClick={deleteGallery} />
+                            
                         </div>
                     </div>
                     <p style={{padding: '2px'}}>{gallery.location}</p>
