@@ -6,6 +6,8 @@ import { getOneGallery, removeGallery, updateGallery } from '../../api/gallery'
 import messages from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/LoadingScreen'
 import EditGalleryModal from './EditGalleryModal'
+import './ShowGallery.css'
+
 // import ShowArtwork from '../artwork/ArtworkIndex'
 // import NewArtworkModal from '../artworks/NewArtworkModal'
 
@@ -106,24 +108,37 @@ const ShowGallery = props => {
     return (
         <div className='show_gallery__gallery-container'>
             <div className='show-gallery__gallery-hero'>
-                <img
-                    className='show-gallery__gallery-hero-img'
-                    src='{gallery.image)'
+
+                <div className='show-gallery__gallery-hero-img'>
+                    
+                    <img
+                    src= {'gallery.image'}
                     alt='gallery'
-                />
-                <h3 className='show-gallery__gallery-name'>{gallery.name}</h3>
+                    />
+
+                </div>
+
+
+                <div className='show-gallery__gallery-name'>
+                    <h3>{gallery.name}</h3>
+                    </div>
+
+
             </div>
+
+
             <div className='show-gallery__gallery-main'>
-                <h4 className='show-gallery__gallery-location'>
-                    {gallery.location}
-                </h4>
-                <h4 className='show-gallery__physical-address'>
-                    {gallery.address}
-                </h4>
-                <p className='show-gallery__gallery-description'>
-                    {gallery.description}
-                </p>
+
+
+                <div className='show-gallery__gallery-location' ><h4>{gallery.location}</h4></div>
+
+                 {/* gallery.address is not showing on the page?? */}
+                <h4 className='show-gallery__physical-address'>{gallery.address}</h4>
+                
+                <div className='show-gallery__gallery-description'><p>{gallery.description}</p></div>
+
             </div>
+
             {user.isCurator ? 
             
             (
@@ -134,13 +149,26 @@ const ShowGallery = props => {
                             className='btn btn-primary'
                             onClick={() => setEditModalShow(true)}
                         >
-                            manage gallery
+                            Manage gallery
                         </div>
-                        <Link to={`/artworks/${gallery.id}`}>
-                            manage exhibit
+                        
+                 
+                            
+                         <Link 
+                         to={`/artworks/${gallery.id}`}  
+                         className='btn btn-primary'
+                         style={{marginLeft:'10px'}}
+                         >
+                            Manage exhibit
                         </Link>
-                        <Link to={`/artists/${gallery.id}`}>
-                            manage artists
+                        
+                    
+                      
+                        <Link 
+                        to={`/artists/${gallery.id}`} 
+                        className='btn btn-primary' 
+                        style={{marginLeft:'10px'}}>
+                            Manage artists
                         </Link>
                     </div>
                 </div>
@@ -152,11 +180,11 @@ const ShowGallery = props => {
              
                 <div className='show-gallery__explorer-interface'>
                     <div className='show-gallery__links-container'>
-                        <Link to={`/artworks/${gallery.id}`}>view exhibit</Link>
+                        <Link to={`/artworks/${gallery.id}`}>View exhibit</Link>
                     </div>
                     <div className='show-gallery__featured-artists'>
                         <h4 className='show-gallery__featured-artists-title'>
-                            featured artists
+                            Featured artists
                         </h4>
                         <ul className='show-gallery__featured-artists-list'>
                             {/* a list of the artists added by the gallery's curator */}
