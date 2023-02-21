@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import { FiEdit, FiTrash} from 'react-icons/fi'
-import { updateGallery, removeGallery} from '../../api/gallery'
+import { FiEdit, FiTrash } from 'react-icons/fi'
+import { updateGallery, removeGallery } from '../../api/gallery'
 import { Link } from 'react-router-dom'
 import '../../index.css'
-import { removeGalleryFailure, removeGallerySuccess } from '../shared/AutoDismissAlert/messages'
+import {
+    removeGalleryFailure,
+    removeGallerySuccess,
+} from '../shared/AutoDismissAlert/messages'
 import EditGalleryModal from './EditGalleryModal'
 
 const Gallery = props => {
@@ -23,46 +26,58 @@ const Gallery = props => {
                 msgAlert({
                     heading: 'Deletion Success',
                     message: removeGallerySuccess,
-                    variant: 'success'
+                    variant: 'success',
                 })
             })
             .catch(() => {
                 msgAlert({
                     heading: 'Deletion Failed',
                     message: removeGalleryFailure,
-                    variant: 'danger'
+                    variant: 'danger',
                 })
             })
     }
-
 
     return (
         <div className='main'>
             <div className='index-container'>
                 <div>
-                    <img className='index-img'
+                    <img
+                        className='index-img'
                         src={gallery.img}
                         alt='gallery'
                     />
                 </div>
-                
 
                 {/* <p className='***ONLY FOR TESTING***'>{gallery.owner?.email}</p> */}
                 <div className='index-container-info'>
                     <div className='title-container'>
-                        <h2 style={{padding: '2px'}}>{gallery.name}</h2>
+                        <h2 style={{ padding: '2px' }}>{gallery.name}</h2>
                         <div className='index-icons'>
-                            <FiEdit  size='1.5rem'  onClick={() => setEditGalleryModalShow(true)} />
+                            <FiEdit
+                                size='1.5rem'
+                                onClick={() => setEditGalleryModalShow(true)}
+                            />
                             {/* <FiTrash size='1.5rem' onClick={inserted the gallery delete function here} /> */}
-                            <FiTrash size='1.5rem' onClick={deleteGallery} />
-                            
+                            <FiTrash
+                                size='1.5rem'
+                                onClick={deleteGallery}
+                            />
                         </div>
                     </div>
-                    <p style={{padding: '2px'}}>{gallery.location}</p>
-                    <p style={{padding: '2px'}}>{gallery.description}</p>
-                    <div><Link to={`/galleries/${gallery._id}`} className='btn btn-light gh-btn' > Show Gallery </Link></div>
+                    <p style={{ padding: '2px' }}>{gallery.location}</p>
+                    <p style={{ padding: '2px' }}>{gallery.description}</p>
+                    <div>
+                        <Link
+                            to={`/galleries/${gallery._id}`}
+                            className='gh-btn'
+                        >
+                            {' '}
+                            Show Gallery{' '}
+                        </Link>
+                    </div>
                 </div>
-        
+
                 <EditGalleryModal
                     user={user}
                     gallery={gallery}
