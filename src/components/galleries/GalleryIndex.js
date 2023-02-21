@@ -74,6 +74,11 @@ const GalleryIndex = props => {
                     </div>
                 </div>
             </div>
+            <div className='home-description'>
+                <h1 >Welcome to Gallery Hub</h1>
+                <h4 style={{padding: '1rem'}}>Create and Share your Galleries with the world!</h4>
+                <h4 >View your favorite artists or artworks from anywhere!</h4>
+            </div>
 
             <div className='gh-main-container'>
                 <p className='recommended'>Recommended Galleries</p>
