@@ -7,15 +7,14 @@ import '../../index.css'
 
 const ShowArtwork = props => {
     //pulling in props
-    const { msgAlert } = props
+    const { msgAlert, user } = props
     //setting initial state for artistInfo
     const [artworkInfo, setArtworkInfo] = useState({})
     //pulling id for the api request param
-    const { id } = useParams()
-    console.log('this is id', id)
+    const { galleryId, artworkId } = useParams()
 
     useEffect(() => {
-        getOneArtwork(id)
+        getOneArtwork(galleryId, artworkId, user)
             //setting ArtistInfo to the data from the api call
             .then(res => setArtworkInfo(res.data.artwork))
             //giving user an error message if api call fails
