@@ -55,6 +55,7 @@ const ArtworkIndex = props => {
         <Artwork
             key={artPiece._id}
             artPiece={artPiece}
+            galleryId={galleryId}
             user={user}
             msgAlert={msgAlert}
             triggerRefresh={() => setUpdated(prev => !prev)}

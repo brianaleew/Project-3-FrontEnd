@@ -11,14 +11,14 @@ import '../../index.css'
 
 const Artwork = props => {
     //pulling in the props we need
-    const { artPiece, user, msgAlert, triggerRefresh } = props
+    const { artPiece, user, msgAlert, triggerRefresh, galleryId } = props
     //setting up initial state for EditModal
     const [editArtworkModalShow, setEditArtworkModalShow] = useState(false)
 
     // the function for deleting artwork from the index
     const removeArtwork = () => {
         //calling api delete func
-        deleteArtwork(user, artPiece._id)
+        deleteArtwork(user, galleryId, artPiece._id)
             .then(() => triggerRefresh())
             //sending success message to user
             .then(() => {
@@ -69,7 +69,7 @@ const Artwork = props => {
                     <p style={{ padding: '2px' }}>{artPiece.media}</p>
                     <div>
                         <Link
-                            to={`/artworks/${artPiece._id}`}
+                            to={`/artworks/${galleryId}/${artPiece._id}`}
                             className='gh-btn'
                         >
                             Show Art

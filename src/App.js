@@ -18,6 +18,7 @@ import ArtistIndex from './components/artists/ArtistIndex'
 import ShowArtist from './components/artists/ShowArtist'
 import CuratorIndex from './components/galleries/CuratorIndex'
 import ArtworkIndex from './components/artwork/ArtworkIndex'
+import ShowArtwork from './components/artwork/ShowArtwork'
 
 const App = () => {
     const [user, setUser] = useState(null)
@@ -135,6 +136,17 @@ const App = () => {
                     element={
                         <RequireAuth user={user}>
                             <ArtworkIndex
+                                msgAlert={msgAlert}
+                                user={user}
+                            />
+                        </RequireAuth>
+                    }
+                />
+                <Route
+                    path='/artworks/:galleryId/:artworkId'
+                    element={
+                        <RequireAuth user={user}>
+                            <ShowArtwork
                                 msgAlert={msgAlert}
                                 user={user}
                             />
