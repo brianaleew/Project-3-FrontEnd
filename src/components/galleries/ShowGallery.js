@@ -104,26 +104,28 @@ const ShowGallery = props => {
     //     }
 
     return (
-        <div className='show_gallery__gallery-container'>
-            <div className='show-gallery__gallery-hero'>
-                <div className='show-gallery__gallery-hero-img'>
-                    <img
-                        src={'gallery.image'}
-                        alt='gallery'
-                    />
+        <div className='main'>
+            <div className='show_gallery__gallery-container'>
+                <div className='show-gallery__gallery-hero'>
+                    <div className='show-gallery__gallery-hero-img'>
+                        <img
+                            src={gallery.img}
+                            alt='gallery'
+                        />
+                    </div>
+
+                    <div className='show-gallery__gallery-name'>
+                        <h3>{gallery.name}</h3>
+                    </div>
                 </div>
 
-                <div className='show-gallery__gallery-name'>
-                    <h3>{gallery.name}</h3>
-                </div>
-            </div>
-
-            <div className='show-gallery__gallery-main'>
-                <div className='show-gallery__gallery-location'>
-                    <h4>{gallery.location}</h4>
-                </div>
-                <div className='show-gallery__gallery-description'>
-                    <p>{gallery.description}</p>
+                <div className='show-gallery__gallery-main'>
+                    <div className='show-gallery__gallery-location'>
+                        <h4>{gallery.location}</h4>
+                    </div>
+                    <div className='show-gallery__gallery-description'>
+                        <p>{gallery.description}</p>
+                    </div>
                 </div>
             </div>
 
@@ -138,17 +140,15 @@ const ShowGallery = props => {
                         </div>
 
                         <Link
-                            to={`/artworks/${gallery.id}`}
-                            className='btn btn-primary'
-                            style={{ marginLeft: '10px' }}
+                            to={`/artworks/${gallery._id}`}
+                            className='gh-btn'
                         >
                             Manage exhibit
                         </Link>
 
                         <Link
-                            to={`/artists/${gallery.id}`}
-                            className='btn btn-primary'
-                            style={{ marginLeft: '10px' }}
+                            to={`/artists/${gallery._id}`}
+                            className='gh-btn'
                         >
                             Manage artists
                         </Link>

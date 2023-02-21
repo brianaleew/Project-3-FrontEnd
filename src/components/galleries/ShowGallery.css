@@ -1,27 +1,26 @@
-
-
-.show-gallery__curator-interface{
-
+.show-gallery__curator-interface {
     text-align: center;
     align-items: center;
     margin-top: 30px;
-
 }
 
-.show_gallery__gallery-container{
+.show_gallery__gallery-container {
     text-align: center;
-    margin-top: 300px;
-
 }
 
-
-.show-gallery__gallery-name, 
+.show-gallery__gallery-name,
 .show-gallery__gallery-location,
-.show-gallery__gallery-description{
+.show-gallery__gallery-description {
     margin-top: 20px;
 }
 
-.show-gallery__gallery-hero-img{
+.show-gallery__gallery-hero-img img {
+    max-width: 100%;
+}
 
-    margin-top: 50px;
+.show-gallery__links-container {
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+    gap: 1rem;
 }

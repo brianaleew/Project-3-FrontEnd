@@ -5,8 +5,8 @@ import {
     createArtwork,
     updateArtwork,
     deleteArtwork,
-} from '../../api/artist'
-import CreateArtworkModal from './CreateArtistModal'
+} from '../../api/artwork'
+import CreateArtworkModal from './CreateArtworkModal'
 import Artwork from './Artwork'
 import messages from '../shared/AutoDismissAlert/messages'
 import { FiEdit, FiTrash, FiPlus } from 'react-icons/fi'

@@ -22,16 +22,19 @@
 }
 
 .gallery-index__gallery-name {
+    font-size: 1.5rem;
+    font-weight: 500;
     position: absolute;
     top: 1rem;
     left: 1rem;
     color: white;
-    text-shadow: 1px 1px 5px hsl(0 0 0 / 0.75);
+    text-shadow: 1px 1px 3px hsl(0 0% 0%);
     z-index: 10;
 }
 .gallery-index__gallery-image {
     max-width: 100%;
-    object-fit: scale-down;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     margin-top: 10px;
 }
 
