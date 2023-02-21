@@ -64,7 +64,7 @@ const ArtworkIndex = props => {
     // console.log('This is the artist array', artistArray)
 
     return (
-        <div className='main'>
+        <div className='main gh-main-container'>
             <div className='index-head'>
                 <h3>Total Artists: </h3>
                 <FiPlus
