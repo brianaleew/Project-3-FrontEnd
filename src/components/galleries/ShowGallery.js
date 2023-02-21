@@ -147,7 +147,7 @@ const ShowGallery = props => {
                         </Link>
 
                         <Link
-                            to={`/artists/${gallery._id}`}
+                            to={`/artists`}
                             className='gh-btn'
                         >
                             Manage artists

@@ -2,7 +2,7 @@
 
 Created By: **Briana Wright**, **Eric Elsner** and **Belal Elkurd**
 
-- picture of final landing page will be here
+![Landing Page](/Images/landingPage.png)
 
 ## Overview
 
@@ -53,8 +53,7 @@ Our general approach for this project was to start simple and basic. We narrowed
 We approached our design with the industry standard "mobile-first" method, as shown in our wireframes. As far as the "look" of our website, we decided that a simple, clean design makes the most sense for an application centered around art.
 
 ## Unsolved Issues/Major Hurdles
-
-TBA
+In working on our front-end React client, we all came in with different levels of comfortability with React so we often had to come together and work together on parts we initially planned to work on our own with. This had an effect on our workflow and made our time constraint a bit tighter but we all came out knowing a lot more about React and its twists and turns!
 
 ## Technologies Used
 
