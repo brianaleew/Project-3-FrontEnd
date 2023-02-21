@@ -6,6 +6,7 @@ import {
     updateArtwork,
     deleteArtwork,
 } from '../../api/artwork'
+import { useParams } from 'react-router-dom'
 import CreateArtworkModal from './CreateArtworkModal'
 import Artwork from './Artwork'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -22,9 +23,12 @@ const ArtworkIndex = props => {
     const [updated, setUpdated] = useState(false)
     const [createArtworkModalShow, setCreateArtworkModalShow] = useState(false)
 
+    const { galleryId } = useParams()
+    console.log('galID', galleryId)
+
     //making api call
     useEffect(() => {
-        getAllArtwork()
+        getAllArtwork(galleryId, user)
             .then(res => {
                 // console.log('This is artists', res.data.artists)
                 setArtworkArray(res.data.artwork)
@@ -61,9 +65,12 @@ const ArtworkIndex = props => {
 
     return (
         <div className='main'>
-            <div>
+            <div className='index-head'>
                 <h3>Total Artists: </h3>
-                <FiPlus onClick={() => setCreateArtworkModalShow(true)} />
+                <FiPlus
+                    size='2rem'
+                    onClick={() => setCreateArtworkModalShow(true)}
+                />
             </div>
 
             <div>{artworkList}</div>

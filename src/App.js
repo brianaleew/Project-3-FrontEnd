@@ -131,7 +131,7 @@ const App = () => {
                     }
                 />
                 <Route
-                    path='/artworks/:id'
+                    path='/artworks/:galleryId'
                     element={
                         <RequireAuth user={user}>
                             <ArtworkIndex

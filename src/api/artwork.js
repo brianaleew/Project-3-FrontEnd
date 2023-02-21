@@ -4,8 +4,14 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // INDEX
-export const getAllArtwork = galleryId => {
-    return axios(`${apiUrl}/artworks/${galleryId}`)
+export const getAllArtwork = (galleryId, user) => {
+    return axios({
+        url: `${apiUrl}/artworks/${galleryId}/`,
+        method: 'GET',
+        headers: {
+            Authorization: `Token token=${user.token}`,
+        },
+    })
 }
 
 // SHOW
