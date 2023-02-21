@@ -12,6 +12,7 @@ import {
 } from '../shared/AutoDismissAlert/messages'
 import GalleryForm from '../shared/GalleryForm'
 import { Modal } from 'react-bootstrap'
+import axios from 'axios'
 
 // bring in the useNavigate hook from react-router-dom
 import { useNavigate } from 'react-router-dom'
@@ -70,10 +71,12 @@ const CreateGalleryModal = props => {
     const onSubmit = e => {
         e.preventDefault()
 
+        console.log(gallery)
         createGallery(user, gallery)
             // first we'll nav to the show page
             .then(res => {
-                navigate(`/gallerys/${res.data.gallery.id}`)
+                console.log('the gallery is: ', gallery)
+                navigate(`/galleries/${res.data.gallery._id}`)
             })
             // we'll also send a success message
             .then(() => {

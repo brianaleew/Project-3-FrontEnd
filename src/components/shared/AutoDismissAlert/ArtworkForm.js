@@ -80,12 +80,7 @@ const ArtistForm = props => {
                 </Form.Group>
                 <Button
                     type='submit'
-                    className='btn-light'
-                    style={{
-                        border: '1px solid black',
-                        width: '15em',
-                        alignSelf: 'center',
-                    }}
+                    className='gh-btn'
                 >
                     Submit
                 </Button>

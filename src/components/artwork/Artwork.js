@@ -74,8 +74,7 @@ const Artwork = props => {
                     <div>
                         <Link
                             to={`/artworks/${artPiece._id}`}
-                            className='btn btn-light'
-                            style={{ border: '1px solid black', margin: '8px' }}
+                            className='gh-btn'
                         >
                             Show Art
                         </Link>

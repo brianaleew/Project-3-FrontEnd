@@ -27,22 +27,22 @@ const GalleryIndex = props => {
 
     // console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
-        <li key={gallery._id}>
+        <li
+            className='gallery-index__gallery-container'
+            key={gallery._id}
+        >
+            <Link to={`/galleries/${gallery._id}`}>
+                <div>
+                    <p className='gallery-index__gallery-name'>
+                        {gallery.name}
+                    </p>
+                </div>
 
-            <Link to = {`/galleries/${gallery._id}`}>
-
-
-            <div>
-                <p className='galleryName'>{gallery.name}</p>
-            </div>
-
-            <img
-                className='gallery-index__gallery-image'
-                src={'/art-gallery.jpg'}
-                alt='hero'
-            />
-            
-           
+                <img
+                    className='gallery-index__gallery-image'
+                    src={'/images/art-gallery.jpg'}
+                    alt='hero'
+                />
             </Link>
         </li>
     ))
@@ -54,7 +54,7 @@ const GalleryIndex = props => {
             <div className='gallery-index__hero'>
                 <img
                     className='gallery-index__hero-image'
-                    src={'/art-gallery.jpg'}
+                    src={'/images/art-gallery.jpg'}
                     alt='hero'
                 />
                 <div className='gallery-index__hero-icons gh-flex-row'>

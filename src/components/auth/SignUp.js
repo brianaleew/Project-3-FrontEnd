@@ -118,7 +118,7 @@ const SignUp = props => {
                         />
                     </Form.Group>
                     <Button
-                        variant='primary'
+                        className='gh-btn'
                         type='submit'
                     >
                         Submit
