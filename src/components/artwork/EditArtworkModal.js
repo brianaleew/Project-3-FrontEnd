@@ -18,6 +18,7 @@ const EditArtworkModal = props => {
         handleClose,
         msgAlert,
         triggerRefresh,
+        galleryId,
     } = props
     //setting initial state of artistInfo
     const [artworkInfo, setArtworkInfo] = useState(artPiece)
@@ -43,7 +44,7 @@ const EditArtworkModal = props => {
     const onSubmit = e => {
         e.preventDefault()
 
-        updateArtwork(user, artworkInfo)
+        updateArtwork(user, galleryId, artworkInfo)
             //closing modal
             .then(() => handleClose())
             //sending user the success message

@@ -38,7 +38,7 @@ export const createGallery = (user, newGallery) => {
 // Update (update a gallery)
 export const updateGallery = (user, updatedGallery) => {
     return axios({
-        url: `${apiUrl}/galleries/${updatedGallery.id}`,
+        url: `${apiUrl}/galleries/${updatedGallery._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`,

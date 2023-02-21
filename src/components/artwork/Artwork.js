@@ -85,6 +85,7 @@ const Artwork = props => {
                     msgAlert={msgAlert}
                     handleClose={() => setEditArtworkModalShow(false)}
                     triggerRefresh={triggerRefresh}
+                    galleryId={galleryId}
                 />
             </div>
         </div>
