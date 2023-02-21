@@ -25,31 +25,7 @@ const authenticatedOptions = (
                 Sign Out
             </Link>
         </Nav.Item>
-        <Nav.Item className='m-2'>
-            <Link
-                to='artists'
-                style={linkStyle}
-            >
-                Artist Index
-            </Link>
-        </Nav.Item>
-        <Nav.Item className='m-2'>
-            <Link
-                to='artists/:id'
-                style={linkStyle}
-            >
-                Artist Show
-            </Link>
-        </Nav.Item>
 
-        <Nav.Item className='m-2'>
-            <Link
-                to='galleries-mine'
-                style={linkStyle}
-            >
-                Curator Index
-            </Link>
-        </Nav.Item>
     </>
 )
 
@@ -71,6 +47,8 @@ const unauthenticatedOptions = (
                 Sign In
             </Link>
         </Nav.Item>
+
+        
     </>
 )
 
@@ -84,10 +62,35 @@ const alwaysOptions = (
                 Home
             </Link>
         </Nav.Item>
+        
     </>
 )
 
-const Header = ({ user }) => (
+const curatorOptions = (
+    <>
+    <Nav.Item className='m-2'>
+            <Link
+                to='/galleries-mine'
+                style={linkStyle}
+            >
+            Manage Galleries  
+            </Link>
+        </Nav.Item>
+        <Nav.Item className='m-2'>
+            <Link
+                to='artists'
+                style={linkStyle}
+            >
+                Artist Profiles
+            </Link>
+        </Nav.Item>
+
+     </>    
+)
+
+const Header = ({ user }) => {
+    console.log('this is user', user)
+    return(
     <Navbar
         bg='light'
         variant='light'
@@ -110,17 +113,27 @@ const Header = ({ user }) => (
             style={dropdownNav}
             className='m-2 nav justify-content-end bg-muted'
         >
+            
             <Nav className='ml-auto'>
                 {user && (
-                    <span className='navbar-text mr-2'>
+                    <span className='navbar-text mr-2' style={{fontFamily: 'Exo, sans serif'}}>
                         Welcome, {user.email}
                     </span>
                 )}
                 {alwaysOptions}
                 {user ? authenticatedOptions : unauthenticatedOptions}
+
+                {user && user.isCurator ? curatorOptions : null}
+
+
+                {/* {user.isCurator && 
+                    curatorOptions
+                ) */}
+                
+                
             </Nav>
         </Navbar.Collapse>
-    </Navbar>
-)
+    </Navbar>)
+}
 
 export default Header

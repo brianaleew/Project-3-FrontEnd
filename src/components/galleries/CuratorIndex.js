@@ -55,8 +55,11 @@ const CuratorIndex = props => {
     return (
         <div className='main gh-main-container'>
             <div className='index-head'>
-                <h3>Total Galleries: {galleryTotal} </h3>
-                <FiPlus size='2rem' onClick={() => setCreateGalleryModalShow(true)} />
+            <h3>Total Galleries: {galleryTotal} </h3>
+                <span style={{display: 'flex'}}>
+                    <h5 style={{padding: '0 1rem 0 0'}}>Add New</h5>
+                    <FiPlus size='2rem' onClick={() => setCreateGalleryModalShow(true)} />
+                </span>
             </div>
 
             <div>{GalleryList}</div>

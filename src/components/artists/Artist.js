@@ -66,7 +66,7 @@ const Artist = props => {
 
                     <p style={{padding: '2px'}}>{person.location}</p>
                     <a  style={{padding: '2px'}}src={person.website}>{person.website}</a>
-                   <div><Link to={`/artists/${person._id}`} className='btn btn-light' style={{border: '1px solid black', margin: '8px'}}>Show Artist</Link></div> 
+                   <div><Link to={`/artists/${person._id}`} className='btn btn-light' style={{border: '1px solid black', margin: '8px'}}>View Artist</Link></div> 
                 </div>
 
                 <EditArtistModal
