@@ -15,17 +15,17 @@ const ArtistForm = props => {
                 className='form-styles__form'
             >
                 <Form.Group>
-                    <Form.Label>title</Form.Label>
+                    <Form.Label>Title</Form.Label>
                     <Form.Control
                         placeholder='title of the art'
-                        name='name'
-                        id='name'
+                        name='title'
+                        id='title'
                         value={artwork.title}
                         onChange={handleChange}
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>artist</Form.Label>
+                    <Form.Label>Artist</Form.Label>
                     <Form.Control
                         placeholder='name of the artist'
                         name='artist'
@@ -35,7 +35,7 @@ const ArtistForm = props => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>date</Form.Label>
+                    <Form.Label>Date</Form.Label>
                     <Form.Control
                         placeholder='year (or range) of artwork creation'
                         name='date'
@@ -45,7 +45,7 @@ const ArtistForm = props => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>media</Form.Label>
+                    <Form.Label>Media</Form.Label>
                     <Form.Control
                         placeholder='specify the media of your artwork (eg oil on canvas)'
                         name='media'
@@ -55,7 +55,7 @@ const ArtistForm = props => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>art image (url)</Form.Label>
+                    <Form.Label>Image (url)</Form.Label>
                     <Form.Control
                         className='artist-form-input-box'
                         placeholder='place the image link to your artwork picture here'
@@ -66,7 +66,7 @@ const ArtistForm = props => {
                     />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>description</Form.Label>
+                    <Form.Label>Description</Form.Label>
                     <Form.Control
                         as='textarea'
                         rows='10'

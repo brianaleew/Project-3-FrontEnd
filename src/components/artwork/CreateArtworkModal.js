@@ -10,7 +10,8 @@ import { Modal } from 'react-bootstrap'
 
 const CreateArtworkModal = props => {
     //getting props we need
-    const { user, show, handleClose, msgAlert, triggerRefresh } = props
+    const { user, show, handleClose, msgAlert, triggerRefresh, galleryId } =
+        props
     //setting artist initial state
     const [artwork, setArtwork] = useState({
         title: '',
@@ -44,7 +45,7 @@ const CreateArtworkModal = props => {
     const onSubmit = e => {
         e.preventDefault()
 
-        createArtwork(user, artwork)
+        createArtwork(user, galleryId, artwork)
             //closing modal and refresh the page to reflect new artwork
             .then(() => handleClose())
             .then(() => triggerRefresh())
