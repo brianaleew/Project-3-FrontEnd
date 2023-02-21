@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom'
 
 const GalleryIndex = props => {
     const { user, msgAlert } = props
-    const [galleriesA, setGalleriesA] = useState([])
+    const [galleriesArr, setGalleriesArr] = useState([])
 
     useEffect(() => {
         getAllGalleries()
             .then(res => {
                 // console.log('res data: ', res.data.galleries)
-                setGalleriesA(res.data.galleries)
+                setGalleriesArr(res.data.galleries)
             })
             .catch(err => {
                 msgAlert({
@@ -26,26 +26,29 @@ const GalleryIndex = props => {
     }, [])
 
     // console.log(galleriesA)
-    const galleryArray = galleriesA.map(gallery => (
-        <li
-            className='gallery-index__gallery-container'
-            key={gallery._id}
-        >
-            <Link to={`/galleries/${gallery._id}`}>
-                <div>
-                    <p className='gallery-index__gallery-name'>
-                        {gallery.name}
-                    </p>
-                </div>
+    const galleryArray = galleriesArr.map(gallery => {
+        console.log(gallery.img)
+        return (
+            <li
+                className='gallery-index__gallery-container'
+                key={gallery._id}
+            >
+                <Link to={`/galleries/${gallery._id}`}>
+                    <div>
+                        <p className='gallery-index__gallery-name'>
+                            {gallery.name}
+                        </p>
+                    </div>
 
-                <img
-                    className='gallery-index__gallery-image'
-                    src={'/images/art-gallery.jpg'}
-                    alt='hero'
-                />
-            </Link>
-        </li>
-    ))
+                    <img
+                        className='gallery-index__gallery-image'
+                        src={gallery.img}
+                        alt='gallery'
+                    />
+                </Link>
+            </li>
+        )
+    })
 
     // console.log(galleryArray)
 
@@ -54,7 +57,7 @@ const GalleryIndex = props => {
             <div className='gallery-index__hero'>
                 <img
                     className='gallery-index__hero-image'
-                    src={'/images/art-gallery.jpg'}
+                    src={'./images/art-gallery.jpg'}
                     alt='hero'
                 />
                 <div className='gallery-index__hero-icons gh-flex-row'>
@@ -75,9 +78,11 @@ const GalleryIndex = props => {
                 </div>
             </div>
             <div className='home-description'>
-                <h1 >Welcome to Gallery Hub</h1>
-                <h4 style={{padding: '1rem'}}>Create and Share your Galleries with the world!</h4>
-                <h4 >View your favorite artists or artworks from anywhere!</h4>
+                <h1>Welcome to Gallery Hub</h1>
+                <h4 style={{ padding: '1rem' }}>
+                    Create and Share your Galleries with the world!
+                </h4>
+                <h4>View your favorite artists or artworks from anywhere!</h4>
             </div>
 
             <div className='gh-main-container'>

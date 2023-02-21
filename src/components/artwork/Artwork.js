@@ -51,7 +51,7 @@ const Artwork = props => {
                 {/* <p className='***ONLY FOR TESTING***'>{person.owner?.email}</p> */}
                 <div className='index-container-info'>
                     <div className='title-container'>
-                        <h2 style={{ padding: '2px' }}>{artPiece.name}</h2>
+                        <h2 style={{ padding: '2px' }}>{artPiece.title}</h2>
                         <div className='index-icons'>
                             <FiEdit
                                 size='1.5rem'
@@ -64,13 +64,9 @@ const Artwork = props => {
                         </div>
                     </div>
 
-                    <p style={{ padding: '2px' }}>{artPiece.location}</p>
-                    <a
-                        style={{ padding: '2px' }}
-                        src={artPiece.website}
-                    >
-                        {artPiece.website}
-                    </a>
+                    <p style={{ padding: '2px' }}>{artPiece.artist}</p>
+                    <p style={{ padding: '2px' }}>{artPiece.date}</p>
+                    <p style={{ padding: '2px' }}>{artPiece.media}</p>
                     <div>
                         <Link
                             to={`/artworks/${artPiece._id}`}
