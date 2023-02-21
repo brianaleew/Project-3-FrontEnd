@@ -87,7 +87,7 @@ const SignIn = props => {
                         />
                     </Form.Group>
                     <Button
-                        variant='primary'
+                        className='gh-btn'
                         type='submit'
                     >
                         submit

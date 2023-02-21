@@ -107,7 +107,11 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
 
 /* this button class adds a black border to bootstrap styled buttons (should be using btn-light) */
 .gh-btn {
-    border: 1px solid black;
+    width: fit-content !important;
+    color: black !important;
+    border: 1px solid black !important;
+    margin: 0.25rem 0.75rem !important;
+    background-color: white !important;
 }
 
 /* Index Pages */

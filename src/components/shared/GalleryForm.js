@@ -54,7 +54,7 @@ const GalleryForm = props => {
                     />
                 </Form.Group>
                 <Button
-                    className='m-2'
+                    className='gh-btn'
                     type='submit'
                 >
                     Submit

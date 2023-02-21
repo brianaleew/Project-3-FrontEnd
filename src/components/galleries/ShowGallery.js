@@ -131,7 +131,7 @@ const ShowGallery = props => {
                 <div className='show-gallery__curator-interface'>
                     <div className='show-gallery__links-container'>
                         <div
-                            className='btn btn-primary'
+                            className='gh-btn'
                             onClick={() => setEditModalShow(true)}
                         >
                             Manage gallery
