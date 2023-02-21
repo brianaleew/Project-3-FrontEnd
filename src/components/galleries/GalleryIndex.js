@@ -27,10 +27,15 @@ const GalleryIndex = props => {
 
     // console.log(galleriesA)
     const galleryArray = galleriesA.map(gallery => (
-        <li key={gallery._id}>
+        <li
+            className='gallery-index__gallery-container'
+            key={gallery._id}
+        >
             <Link to={`/galleries/${gallery._id}`}>
                 <div>
-                    <p className='galleryName'>{gallery.name}</p>
+                    <p className='gallery-index__gallery-name'>
+                        {gallery.name}
+                    </p>
                 </div>
 
                 <img
