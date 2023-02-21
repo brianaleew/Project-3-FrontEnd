@@ -138,6 +138,7 @@ background: 'linear-gradient(0deg, rgba(180,196,250,1) 0%, rgba(232,234,242,1) 7
 
 .index-img {
     width: 13rem;
+    height: 13rem;
     margin: 1rem;
 }
 .index-container-info {
