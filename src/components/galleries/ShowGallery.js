@@ -22,8 +22,6 @@ const ShowGallery = props => {
     const navigate = useNavigate()
 
     const { user, msgAlert } = props
-    console.log('user in ShowGallery props', user)
-    console.log('msgAlert in ShowGallery props', msgAlert)
 
     useEffect(() => {
         getOneGallery(id)
@@ -63,7 +61,7 @@ const ShowGallery = props => {
     }
     //    console.log(user.isCurator)
 
-    // const conditionalInterface = 
+    // const conditionalInterface =
     //     if (user.isCurator) {
     //         return (
     //             <div className='show-gallery__curator-interface'>
@@ -104,45 +102,32 @@ const ShowGallery = props => {
     //             </div>
     //         )
     //     }
-    
+
     return (
         <div className='show_gallery__gallery-container'>
             <div className='show-gallery__gallery-hero'>
-
                 <div className='show-gallery__gallery-hero-img'>
-                    
                     <img
-                    src= {'gallery.image'}
-                    alt='gallery'
+                        src={'gallery.image'}
+                        alt='gallery'
                     />
-
                 </div>
-
 
                 <div className='show-gallery__gallery-name'>
                     <h3>{gallery.name}</h3>
-                    </div>
-
-
+                </div>
             </div>
-
 
             <div className='show-gallery__gallery-main'>
-
-
-                <div className='show-gallery__gallery-location' ><h4>{gallery.location}</h4></div>
-
-                 {/* gallery.address is not showing on the page?? */}
-                <h4 className='show-gallery__physical-address'>{gallery.address}</h4>
-                
-                <div className='show-gallery__gallery-description'><p>{gallery.description}</p></div>
-
+                <div className='show-gallery__gallery-location'>
+                    <h4>{gallery.location}</h4>
+                </div>
+                <div className='show-gallery__gallery-description'>
+                    <p>{gallery.description}</p>
+                </div>
             </div>
 
-            {user.isCurator ? 
-            
-            (
-              
+            {user.isCurator ? (
                 <div className='show-gallery__curator-interface'>
                     <div className='show-gallery__links-container'>
                         <div
@@ -151,33 +136,25 @@ const ShowGallery = props => {
                         >
                             Manage gallery
                         </div>
-                        
-                 
-                            
-                         <Link 
-                         to={`/artworks/${gallery.id}`}  
-                         className='btn btn-primary'
-                         style={{marginLeft:'10px'}}
-                         >
+
+                        <Link
+                            to={`/artworks/${gallery.id}`}
+                            className='btn btn-primary'
+                            style={{ marginLeft: '10px' }}
+                        >
                             Manage exhibit
                         </Link>
-                        
-                    
-                      
-                        <Link 
-                        to={`/artists/${gallery.id}`} 
-                        className='btn btn-primary' 
-                        style={{marginLeft:'10px'}}>
+
+                        <Link
+                            to={`/artists/${gallery.id}`}
+                            className='btn btn-primary'
+                            style={{ marginLeft: '10px' }}
+                        >
                             Manage artists
                         </Link>
                     </div>
                 </div>
-
-            )
-
-            :
-            (
-             
+            ) : (
                 <div className='show-gallery__explorer-interface'>
                     <div className='show-gallery__links-container'>
                         <Link to={`/artworks/${gallery.id}`}>View exhibit</Link>
@@ -195,19 +172,16 @@ const ShowGallery = props => {
                         </ul>
                     </div>
                 </div>
-            )
-                }
-            
+            )}
+
             <EditGalleryModal
-
-                user = {user}
-                show = {editModalShow}
-                handleClose = {()=> setEditModalShow(false)}
-                updateGallery = {updateGallery}
-                msgAlert = {msgAlert}
-                triggerRefresh = {()=> setUpdated(prev => !prev)}
-                gallery = {gallery}
-
+                user={user}
+                show={editModalShow}
+                handleClose={() => setEditModalShow(false)}
+                updateGallery={updateGallery}
+                msgAlert={msgAlert}
+                triggerRefresh={() => setUpdated(prev => !prev)}
+                gallery={gallery}
             />
             {/* we have to add our Edit Gallery modal here but I don't know where I should exactly add it */}
         </div>
