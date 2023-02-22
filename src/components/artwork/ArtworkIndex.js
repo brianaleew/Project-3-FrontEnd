@@ -93,6 +93,7 @@ const ArtworkIndex = props => {
             <CreateArtworkModal
                 user={user}
                 show={createArtworkModalShow}
+                galleryId={galleryId}
                 msgAlert={msgAlert}
                 handleClose={() => setCreateArtworkModalShow(false)}
                 triggerRefresh={() => setUpdated(prev => !prev)}

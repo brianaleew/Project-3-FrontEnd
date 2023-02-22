@@ -40,7 +40,7 @@ export const createArtwork = (user, galleryId, newArtwork) => {
 // UPDATE
 export const updateArtwork = (user, galleryId, updatedArtwork) => {
     return axios({
-        url: `${apiUrl}/artists/${galleryId}/${updatedArtwork.id}`,
+        url: `${apiUrl}/artworks/${galleryId}/${updatedArtwork._id}`,
         method: 'PATCH',
         headers: {
             Authorization: `Token token=${user.token}`,
@@ -52,7 +52,7 @@ export const updateArtwork = (user, galleryId, updatedArtwork) => {
 // DELETE
 export const deleteArtwork = (user, galleryId, artworkId) => {
     return axios({
-        url: `${apiUrl}/artists/${galleryId}/${artworkId}`,
+        url: `${apiUrl}/artworks/${galleryId}/${artworkId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`,
