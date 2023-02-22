@@ -1,7 +1,7 @@
 let apiUrl
 const apiUrls = {
     // YOU MUST CHANGE PRODUCTION URL WHEN DEPLOYING
-	production: '<replace_with_deployed_api_url>',
+	production: 'https://gallery-hub.fly.dev/',
 	development: 'http://localhost:8000',
 }
 
